@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def hello
-  render text: "hello, world!"
+  render text: "www.monpvtaustralien.com  : l'application indispensable pour les Pvtistes en Australie!"
   end
+  
+  def goodbye
+  render text: "www.monpvtaustralien.com : l'application indispensable pour les Pvtistes en Australie!"
+  end
+  
 end
