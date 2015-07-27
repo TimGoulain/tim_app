@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TimApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+      <%= stylesheet_link_tag    'application', media: 'all',
+        'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+  </head>
+  <body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/">Home</a>
+            <ul class="nav">
+				<li class="active"><a href="/static_pages/about">About</a></li>
+				<li class="active"><a href="/users">Users</a></li>
+				<li class="active"><a href="/articles">Articles</a></li>
+                <li class="active"><a href="/ideas">Ideas</a></li>
+				<li class="active"><a href="/static_pages/help">Help</a></li>
+                <li class="active"><a href="/static_pages/contact">Contact</a></li>
+			</ul>
+        </div>
+    </div>
+</div>
 
 <%= yield %>
 
-</body>
+  </body>
 </html>
