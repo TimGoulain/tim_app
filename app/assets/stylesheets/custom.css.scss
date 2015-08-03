@@ -34,6 +34,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  color: #000000
 }
 
 h2 {
@@ -42,7 +43,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: #808080;
 }
 
 p {
@@ -66,4 +67,35 @@ p {
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+/* footer */
+
+footer {
+  margin-top: 185px5px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
 }
