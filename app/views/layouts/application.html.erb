@@ -15,6 +15,28 @@
          <%= yield %>
          <%= render 'layouts/footer' %>
 	 </div>
+	  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+  </script>
+<![endif]-->
+  </head>
+  <body>
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+            <%= link_to "Home", '#', id: "logo" %>
+			<nav>
+			<ul class="nav navbar-nav navbar-right">
+				<li><%= link_to "About", '#' %></li>
+                <li><%= link_to "User", '#' %></li>				
+				<li><%= link_to "Articles", '#' %></li>
+				<li><%= link_to "Ideas", '#' %></li>
+				<li><%= link_to "Contact", '#' %></li>
+				<li><%= link_to "Help", '#' %></li>
+			</ul>
+			</nav>
+        </div>
+ </header>
+</div>
   </body>
 </html>
 
