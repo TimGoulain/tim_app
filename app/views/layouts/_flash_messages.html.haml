@@ -1,0 +1,4 @@
+- flash.each do |message_type, message|
+  %div{:class => "alert #{alert_class(message_type)}"}
+    = link_to '×', '#', class: 'close', data: {dismiss: 'alert'}
+    = message.html_safe

@@ -1,0 +1,9 @@
+!!!
+%html
+  = render 'layouts/head'
+  %body
+    = render 'layouts/header'
+    .container
+      = render 'layouts/flash_messages'
+      = yield
+    = render 'layouts/footer'

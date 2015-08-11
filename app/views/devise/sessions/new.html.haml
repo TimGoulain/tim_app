@@ -1,0 +1,9 @@
+%h2 Log in
+
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = f.input :email, autofocus: true
+  = f.input :password, input_html: {autocomplete: "off"}
+  = f.input :remember_me, as: :boolean
+  = f.submit 'Log in', class: 'btn btn-primary'
+
+= render "devise/shared/links"
