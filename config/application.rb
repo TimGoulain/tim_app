@@ -26,5 +26,10 @@ module TimApp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    # def configure_permitted_parameters
+    #   devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :name, :password_confirmation) }
+    #   devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:name, :password, :remember_me) }
+    # end
   end
 end
