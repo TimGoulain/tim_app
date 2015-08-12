@@ -1,6 +1,9 @@
-#notice
-
-  = @user.name
-  = @user.email
-  = link_to 'Edit', edit_user_registration_path(@user)
-  = link_to 'Back', users_path
+- provide(:title, "My profile")
+%center.jumbotron.list
+  %h1 My profile
+  %frameset{:cols => "20%, 80%"}
+  
+= @user.name
+= @user.email
+= link_to 'Edit', edit_user_registration_path(@user)
+= link_to 'Back', users_path
