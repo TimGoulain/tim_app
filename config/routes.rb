@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  devise_scope :user do
+    get 'profile/edit' => 'users#edit'
+  end
 
   resources :ideas
   resources :articles
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]
 
   root 'static_pages#home'
 
