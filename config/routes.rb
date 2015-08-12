@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :ideas
   resources :articles
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :update]
 
   root 'static_pages#home'
 
