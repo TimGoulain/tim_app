@@ -5,12 +5,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  # attr_accessible :email, :password, :password_confirmation, :remember_me
-
   # Associations
-
-
+  has_many :jobs 
+  has_and_belongs_to_many :skills
+  
+  
   # Validations
 
   validates :name, presence: true, length: { maximum: 50 }
