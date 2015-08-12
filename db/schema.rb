@@ -70,6 +70,14 @@ ActiveRecord::Schema.define(version: 20150812170733) do
     t.string "code"
   end
 
+  create_table "skills_users", force: true do |t|
+    t.integer "skill_id"
+    t.integer "user_id"
+  end
+
+  add_index "skills_users", ["skill_id"], name: "index_skills_users_on_skill_id", using: :btree
+  add_index "skills_users", ["user_id"], name: "index_skills_users_on_user_id", using: :btree
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.datetime "birth"
@@ -97,13 +105,5 @@ ActiveRecord::Schema.define(version: 20150812170733) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "users_skills", force: true do |t|
-    t.integer "user_id"
-    t.integer "skill_id"
-  end
-
-  add_index "users_skills", ["skill_id"], name: "index_users_skills_on_skill_id", using: :btree
-  add_index "users_skills", ["user_id"], name: "index_users_skills_on_user_id", using: :btree
 
 end

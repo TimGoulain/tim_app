@@ -26,6 +26,7 @@ gem 'dotenv-rails'
 gem 'devise'
 gem 'cancancan'
 gem 'delayed_job_active_record'
+gem 'country_select'
 
 group :development, :test do
   gem 'mysql2'
