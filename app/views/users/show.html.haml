@@ -1,9 +1,9 @@
 - provide(:title, "My profile")
-%center.jumbotron.list
-  %h2 My profile
+
+%h2 My profile
 
 .row
-  .col-sm-2
+  .col-sm-4
     .well
       = @user.email
       %br
@@ -16,12 +16,15 @@
       %br
       - if @user.driving_licence
         .label.label-info Driving Licence 
+      %br
+      = @user.phone
     = link_to 'Edit', profile_edit_path
     = link_to 'Back', users_path
     
-  .col-sm-10
+  .col-sm-8
     %h1= @user.headline
     .well= @user.about_me
+    = render @user.jobs 
     
 	
   

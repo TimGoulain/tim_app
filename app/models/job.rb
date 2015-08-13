@@ -9,7 +9,7 @@ class Job < ActiveRecord::Base
   
   # Validations
 
-  validates :title, presence: true
+  validates :position, presence: true
   
   # Callbacks
 
