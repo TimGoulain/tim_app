@@ -1,9 +1,27 @@
 - provide(:title, "My profile")
 %center.jumbotron.list
-  %h1 My profile
-  %frameset{:cols => "20%, 80%"}
+  %h2 My profile
+
+.row
+  .col-sm-2
+    .well
+      = @user.email
+      %br
+      = @user.name
+      %br
+      - if @user.current_location.blank?
+        On the road
+      - else
+        = @user.current_location
+      %br
+      - if @user.driving_licence
+        .label.label-info Driving Licence 
+    = link_to 'Edit', profile_edit_path
+    = link_to 'Back', users_path
+    
+  .col-sm-10
+    %h1= @user.headline
+    .well= @user.about_me
+    
+	
   
-= @user.name
-= @user.email
-= link_to 'Edit', edit_user_registration_path(@user)
-= link_to 'Back', users_path
