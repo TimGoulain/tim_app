@@ -16,3 +16,6 @@
         %td= job.location
         %td= job.description
         %td= link_to job.user.name, user_path(job.user)
+        
+%p
+  = link_to "Add a job", new_job_path
