@@ -14,6 +14,11 @@ class ApplicationController < ActionController::Base
     render text: "www.monpvtaustralien.com : l'application indispensable pour les Pvtistes en Australie!"
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = exception.message
+    redirect_to root_url
+  end
+
   protected
 
   def configure_permitted_parameters

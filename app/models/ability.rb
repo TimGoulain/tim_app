@@ -3,6 +3,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    user || User.new # guest user (not logged in)
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
@@ -30,10 +32,7 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 
-    # if user.admin?
-    #   can :manage, :all
-    # else
-    #   # Other users' permissions
-    # end
+    can :read, User
+    can :manage, User, id: user.id
   end
 end
