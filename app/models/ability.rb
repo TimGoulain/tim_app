@@ -37,5 +37,7 @@ class Ability
 
     can [:read, :create], Job
     can [:update, :destroy], Job, user_id: user.id
+    
+    can [:read, :create], Employer
   end
 end
