@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 
   # Associations
   has_many :jobs 
-  has_and_belongs_to_many :skills
   
   
   # Validations
@@ -21,4 +20,9 @@ class User < ActiveRecord::Base
   # Callbacks
 
   # Instance methods
+  
+  def to_s
+    name
+  end
+  
 end
