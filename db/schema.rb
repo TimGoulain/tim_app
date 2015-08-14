@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812170733) do
+ActiveRecord::Schema.define(version: 20150814085351) do
 
   create_table "articles", force: true do |t|
     t.text     "text"
@@ -50,21 +50,21 @@ ActiveRecord::Schema.define(version: 20150812170733) do
   add_index "jobs", ["sector_id"], name: "index_jobs_on_sector_id", using: :btree
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
 
+  create_table "microposts", force: true do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sectors", force: true do |t|
     t.string "code"
   end
-
-  create_table "skills", force: true do |t|
-    t.string "code"
-  end
-
-  create_table "skills_users", force: true do |t|
-    t.integer "skill_id"
-    t.integer "user_id"
-  end
-
-  add_index "skills_users", ["skill_id"], name: "index_skills_users_on_skill_id", using: :btree
-  add_index "skills_users", ["user_id"], name: "index_skills_users_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20150812170733) do
     t.text     "about_me"
     t.string   "current_location"
     t.string   "headline"
+    t.text     "skills"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
