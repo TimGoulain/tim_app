@@ -1,30 +1,42 @@
 - provide(:title, "My profile")
 
-%h2 My profile
+%h1.strong My profile 
 
 .row
   .col-sm-4
     .well
-      = @user.email
+      %i My email:
+      #{@user.email}
       %br
-      = @user.name
-      %br
+      %i My location:
       - if @user.current_location.blank?
         On the road
       - else
         = @user.current_location
       %br
+      %i My phone number:
+      = @user.phone
+      %br
       - if @user.driving_licence
         .label.label-info Driving Licence 
-      %br
-      = @user.phone
     = link_to 'Edit', profile_edit_path
     = link_to 'Back', users_path
     = link_to 'Add a job', new_job_path
     
   .col-sm-8
-    %h1= @user.headline
-    .well= @user.about_me
+    .label.label-primary
+      = @user.name
+      %br
+      %br
+      = @user.headline
+      %br
+      %br
+    .well.well-sm
+      %strong About me
+    .well.well-lg= @user.about_me
+    %br
+    %br
+    %h2 LATEST JOB EXPERIENCES
     = render @user.jobs 
     
 	

@@ -10,3 +10,5 @@
     %br
     %strong Ended at 
     #{job.ended_at.strftime("%F")}
+    %br
+    = link_to "Edit", edit_job_path(job)
