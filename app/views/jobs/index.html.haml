@@ -1,0 +1,16 @@
+-provide(:title, "Jobs")
+%h1 Looking for a job
+
+%table.table
+  %thead
+    %tr
+      %th Job
+      %th Location
+      %th Description
+
+  %tbody
+    - @jobs.each do |job|
+      %tr
+        %td= job.position
+        %td= job.location
+        %td= job.description

@@ -4,3 +4,9 @@
     = job.location
   .description
     = job.description
+    %br
+    %strong Started at
+    #{job.started_at.strftime("%F")}
+    %br
+    %strong Ended at 
+    #{job.ended_at.strftime("%F")}
