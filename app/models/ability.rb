@@ -3,7 +3,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    user || User.new # guest user (not logged in)
+    user ||= User.new # guest user (not logged in)
 
     # Define abilities for the passed in user here. For example:
     #
@@ -34,5 +34,8 @@ class Ability
 
     can :read, User
     can :manage, User, id: user.id
+
+    can [:read, :create], Job
+    can [:update, :destroy], Job, user_id: user.id
   end
 end
