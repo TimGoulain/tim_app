@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150814085351) do
+ActiveRecord::Schema.define(version: 20150815214910) do
 
   create_table "articles", force: true do |t|
     t.text     "text"
@@ -36,14 +36,14 @@ ActiveRecord::Schema.define(version: 20150814085351) do
   end
 
   create_table "jobs", force: true do |t|
-    t.string   "position"
-    t.text     "description"
-    t.string   "location"
-    t.datetime "started_at"
-    t.datetime "ended_at"
-    t.integer  "user_id"
-    t.integer  "employer_id"
-    t.integer  "sector_id"
+    t.string  "position"
+    t.text    "description"
+    t.string  "location"
+    t.date    "started_at"
+    t.date    "ended_at"
+    t.integer "user_id"
+    t.integer "employer_id"
+    t.integer "sector_id"
   end
 
   add_index "jobs", ["employer_id"], name: "index_jobs_on_employer_id", using: :btree
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20150814085351) do
 
   create_table "users", force: true do |t|
     t.string   "name"
-    t.datetime "birth"
+    t.date     "birth"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "job"
