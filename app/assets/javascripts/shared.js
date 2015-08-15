@@ -11,4 +11,6 @@ $(function () {
     startDate: "1910-01-01",
     endDate: "2003-12-31"
   });
+
+  $('.date-picker').datepicker();
 });

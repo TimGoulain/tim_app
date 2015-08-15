@@ -1,8 +1,8 @@
 = simple_form_for(@job) do |f|
- 
+
   = f.input :position, label: "Your position", placeholder: "Ex:Barman"
   = f.input :description, label: "Describe your job", placeholder: "Making cocktails, preparing delicious capucinni"
   = f.input :location, label: "Location of your job", placeholder: "Sydney"
-  = f.input :started_at, as: :date
-  = f.input :ended_at, as: :date
+  = f.input :started_at, as: :string, input_html: {class: 'date-picker'}
+  = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
   = f.submit
