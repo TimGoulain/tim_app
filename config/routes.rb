@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :offers
+
   devise_for :users
   devise_scope :user do
     get 'profile/edit' => 'users#edit'
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
   resources :ideas
   resources :articles
   resources :users, only: [:index, :show, :update]
-  resources :jobs, except: [:show]
+  resources :jobs, except: [:index, :show]
 
   root 'static_pages#home'
 

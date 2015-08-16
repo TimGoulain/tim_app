@@ -1,0 +1,16 @@
+= simple_form_for(@offer) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :position, placeholder: "The position offered, ex: barman"
+    = f.simple_fields_for :employer do |g|
+      = g.input :name
+      = g.simple_fields_for :contacts do |e|
+        = e.input :email
+        = e.input :phone, as: :tel
+    = f.input :started_at, as: :string, input_html: {class: 'date-picker'}
+    = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
+    = f.association :sector, placeholder: "Ex: Catering"
+
+  .form-actions
+    = f.button :submit

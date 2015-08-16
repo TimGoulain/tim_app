@@ -1,11 +1,6 @@
 # encoding: utf-8
 class JobsController < ApplicationController
-  load_and_authorize_resource only: :index
-  load_and_authorize_resource through: :current_user, except: :index
-
-  def index
-    # @jobs = Job.all
-  end
+  load_and_authorize_resource through: :current_user
 
   def new
     # @job = current_user.jobs.build

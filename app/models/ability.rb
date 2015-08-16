@@ -35,9 +35,12 @@ class Ability
     can :read, User
     can :manage, User, id: user.id
 
-    can [:read, :create], Job
-    can [:update, :destroy], Job, user_id: user.id
+    can :manage, Job, user_id: user.id
     
     can [:read, :create], Employer
+    
+    can [:read, :create], Offer
+    can [:edit, :destroy], Offer, created_by_id: user.id
+    
   end
 end

@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Position:
+  = @offer.position
+%p
+  %b Employer:
+  = @offer.employer
+%p
+  %b Started at:
+  = @offer.started_at
+%p
+  %b Ended at:
+  = @offer.ended_at
+%p
+  %b Sector:
+  = @offer.sector
+%p
+  %b Created by:
+  = @offer.created_by
+
+= link_to 'Edit', edit_offer_path(@offer)
+\|
+= link_to 'Back', offers_path
