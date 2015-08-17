@@ -40,7 +40,7 @@ class Ability
     can [:read, :create], Employer
     
     can [:read, :create], Offer
-    can [:edit, :destroy], Offer, created_by_id: user.id
+    can [:update, :destroy], Offer, created_by_id: user.id
     
   end
 end

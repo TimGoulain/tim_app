@@ -3,6 +3,7 @@
 
   .form-inputs
     = f.input :position, placeholder: "The position offered, ex: barman"
+    
     = f.simple_fields_for :employer do |g|
       = g.input :name
       = g.simple_fields_for :contacts do |e|

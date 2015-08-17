@@ -1,22 +1,25 @@
 class OffersController < ApplicationController
 
   before_action :try_find_employer_from_email, only: :create
-  load_and_authorize_resource 
+  load_and_authorize_resource
   
   def index
-    
   end
 
   def show
-    
   end
 
   def new
+    # Delete if it works =======================
+    # @employer = Employer.new
+    # @offer.employer = @employer
     @offer.employer = Employer.new
     @offer.employer.contacts.build
   end
 
   def edit
+    # Delete if it works ====================
+    # @employer = @offer.employer
   end
 
   def create
@@ -31,6 +34,7 @@ class OffersController < ApplicationController
     if @offer.save
       redirect_to offers_path, notice: 'Your offer was successfully added to the list!'
     else
+      puts @offer.errors.full_messages
       render :new
     end
   end
@@ -45,6 +49,7 @@ class OffersController < ApplicationController
     
   def destroy
     @offer.destroy
+    redirect_to offers_path, notice: 'Your offer was successfully deleted to the list!'
   end
 
   private
@@ -59,15 +64,15 @@ class OffersController < ApplicationController
       end
     end
   end
-  
+
   def offer_params
-    set_contact_password if contact_attributes?
+    set_contact_password if contact_attributes? && contact_params[:id].nil?
     
     params.require(:offer).permit(
       :position, :employer_id, :started_at, :ended_at, :sector_id, :created_by_id,
-      employer_attributes:[
-        :name, 
-        contacts_attributes:[:email, :phone, :employer_id, :password]
+      employer_attributes: [
+        :id, :name, 
+        contacts_attributes:[:id, :email, :phone, :employer_id, :password]
       ]
     )
   end
