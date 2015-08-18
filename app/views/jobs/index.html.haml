@@ -5,7 +5,6 @@
   %thead
     %tr
       %th Job
-      %th Location
       %th Description
       %th Employee
 
@@ -13,7 +12,6 @@
     - @jobs.each do |job|
       %tr
         %td= job.position
-        %td= job.location
         %td= job.description
         %td= link_to job.user.name, user_path(job.user)
         
