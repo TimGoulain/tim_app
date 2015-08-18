@@ -1,0 +1,28 @@
+.offer
+  
+  .row
+    .col-sm-3
+      .label.label-danger.pull-left= offer.sector
+      .header
+        %h3
+          = link_to offer.position, offer, class: "btn btn-primary"
+      
+    .col-sm-6
+      %p  
+      %before
+      %strong
+        = offer.employer.name
+        |
+      %i
+        = offer.employer.location
+      %br
+      %after
+      %i Available as of
+      #{offer.started_at}
+    .col-sm-3
+      .actions
+        - if can? :update, offer
+          = link_to 'Edit', edit_offer_path(offer), class: "btn btn-default", target: "_blank"
+        - if can? :destroy, offer
+          = link_to 'X', offer, class: "btn btn-default", :method => :delete, :data => { :confirm => 'Are you sure?' }
+  

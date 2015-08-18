@@ -10,16 +10,11 @@ class OffersController < ApplicationController
   end
 
   def new
-    # Delete if it works =======================
-    # @employer = Employer.new
-    # @offer.employer = @employer
     @offer.employer = Employer.new
     @offer.employer.contacts.build
   end
 
   def edit
-    # Delete if it works ====================
-    # @employer = @offer.employer
   end
 
   def create
@@ -34,7 +29,6 @@ class OffersController < ApplicationController
     if @offer.save
       redirect_to offers_path, notice: 'Your offer was successfully added to the list!'
     else
-      puts @offer.errors.full_messages
       render :new
     end
   end
@@ -71,7 +65,7 @@ class OffersController < ApplicationController
     params.require(:offer).permit(
       :position, :employer_id, :started_at, :ended_at, :sector_id, :created_by_id,
       employer_attributes: [
-        :id, :name, 
+        :id, :name, :location,
         contacts_attributes:[:id, :email, :phone, :employer_id, :password]
       ]
     )

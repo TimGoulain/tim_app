@@ -1,31 +1,6 @@
 %h1 Listing offers
 
-%table
-  %thead
-    %tr
-      %th Position
-      %th Employer
-      %th Started at
-      %th Ended at
-      %th Sector
-      %th Created by
-      %th
-      %th
-      %th
-
-  %tbody
-    - @offers.each do |offer|
-      %tr
-        %td= offer.position
-        %td= offer.employer
-        %td= offer.started_at
-        %td= offer.ended_at
-        %td= offer.sector
-        %td= offer.created_by
-        %td= link_to 'Show', offer
-        %td= link_to 'Edit', edit_offer_path(offer)
-        %td= link_to 'Destroy', offer, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
+.offers
+  = render @offers
 
 = link_to 'New Offer', new_offer_path

@@ -9,4 +9,7 @@ class Sector < ActiveRecord::Base
   # Callbacks
 
   # Instance methods
+  def to_s
+    code  
+  end
 end

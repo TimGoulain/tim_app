@@ -6,6 +6,7 @@
     
     = f.simple_fields_for :employer do |g|
       = g.input :name
+      = g.input :location
       = g.simple_fields_for :contacts do |e|
         = e.input :email
         = e.input :phone, as: :tel
