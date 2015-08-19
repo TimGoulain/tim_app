@@ -2,7 +2,9 @@
 %center.jumbotron
   %h1 Home
   %p This is the home page of the website for Workholiders in Australia
-  = link_to "Sign up now!", new_user_registration_path, class: "btn btn-primary btn-lg"
+  = link_to new_user_registration_path, class: "btn btn-primary btn-lg" do
+    %b.fa.fa-check
+    Sign up now!
 
 = link_to image_tag("1280px-Flag_of_Australia.svg.png", alt: "Australian flag"),
   'https://commons.wikimedia.org/wiki/Australia'
