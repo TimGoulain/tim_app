@@ -2,6 +2,7 @@
 %html
   = render 'layouts/head'
   %body
+    = render 'layouts/navbar_admin' if user_signed_in? && current_user.admin?
     = render 'layouts/navbar'
     .container
       = render 'layouts/flash_messages'

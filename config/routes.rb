@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :users, only: [:index, :show, :update]
   resources :jobs, except: [:index, :show]
+  resources :sectors
 
   root 'static_pages#home'
 

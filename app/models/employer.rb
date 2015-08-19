@@ -2,7 +2,7 @@
 class Employer < ActiveRecord::Base
   
   # Associations
-  has_many :contacts, class_name: 'User'
+  has_many :contacts, class_name: 'User', dependent: :destroy
   accepts_nested_attributes_for :contacts
   has_many :jobs
   has_many :offers

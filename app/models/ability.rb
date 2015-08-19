@@ -32,15 +32,16 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 
-    can :read, User
-    can :manage, User, id: user.id
-
+    if user.admin?
+      can :manage, :all
+    end
+    
     can :manage, Job, user_id: user.id
     
     can [:read, :create], Employer
     
     can [:read, :create], Offer
-    can [:update, :destroy], Offer, created_by_id: user.id
+    can [:update, :destroy], Offer, created_by_id: user.id   
     
   end
 end

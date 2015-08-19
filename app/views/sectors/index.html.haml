@@ -1,0 +1,17 @@
+-provide(:title, "Sectors")
+%h1 All sectors
+
+%table.table
+  %thead
+    %tr
+      %th
+      %th Name
+
+  %tbody
+    - @sectors.each do |sector|
+      %tr
+        %td= link_to 'X', sector, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to sector.code, edit_sector_path(sector)
+                
+%p
+  = link_to "Add a sector", new_sector_path
