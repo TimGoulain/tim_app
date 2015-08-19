@@ -1,0 +1,7 @@
+fr:
+  activerecord:
+    models:
+      offer: Job
+    attributes:
+      offer:
+        position: Poste
