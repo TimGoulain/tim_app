@@ -2,7 +2,8 @@
   
   .row
     .col-sm-3
-      .label.label-danger.pull-left= offer.sector
+      .label.label-danger.pull-left= offer.sector.code
+      = offer.sector.image
       .header
         %h3
           = link_to offer.position, offer, class: "btn btn-primary"
@@ -22,7 +23,10 @@
     .col-sm-3
       .actions
         - if can? :update, offer
-          = link_to 'Edit', edit_offer_path(offer), class: "btn btn-default", target: "_blank"
+          = link_to edit_offer_path(offer), class: "btn btn-default" do
+            %b.fa.fa-pencil-square-o
         - if can? :destroy, offer
-          = link_to 'X', offer, class: "btn btn-default", :method => :delete, :data => { :confirm => 'Are you sure?' }
+          = link_to offer, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+            %b.fa.fa-times
+           
   

@@ -52,4 +52,8 @@ Rails.application.configure do
   
   # Disable logging
   config.logger = ActiveSupport::Logger.new(nil)
+  
+  #Paperclip
+  Paperclip.options[:command_path] = "/usr/bin/"
+  
   end

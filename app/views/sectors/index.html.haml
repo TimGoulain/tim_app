@@ -12,6 +12,7 @@
       %tr
         %td= link_to 'X', sector, :method => :delete, :data => { :confirm => 'Are you sure?' }
         %td= link_to sector.code, edit_sector_path(sector)
+        %td= link_to image_tag sector.image.url(:icon)
                 
 %p
   = link_to "Add a sector", new_sector_path
