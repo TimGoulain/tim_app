@@ -3,7 +3,7 @@
   .row
     .col-sm-3
       .label.label-danger.pull-left= offer.sector.code
-      = offer.sector.image
+      = link_to image_tag offer.sector.image(:icon)
       .header
         %h3
           = link_to offer.position, offer, class: "btn btn-primary"
