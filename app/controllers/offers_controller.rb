@@ -63,7 +63,7 @@ class OffersController < ApplicationController
     set_contact_password if contact_attributes? && contact_params[:id].nil?
     
     params.require(:offer).permit(
-      :position, :employer_id, :sector_id, :started_at, :ended_at, :created_by_id,
+      :position, :description, :employer_id, :sector_id, :started_at, :ended_at, :created_by_id,
       sector_attributes: [:id, :code, :image],
       employer_attributes: [
         :id, :name, :location,

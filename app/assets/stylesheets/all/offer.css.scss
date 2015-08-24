@@ -1,7 +1,12 @@
 .offer {
-  border-bottom: 1px solid #e0e0e0;
+  border: 1px solid #e0e0e0;
+  margin: 5px;
+}
+.col-sm-3 {
+  padding: 15px;
+  float:left;
 }
 
-.offer .p {
-  vertical-align: middle;
+img {
+  float: left;
 }

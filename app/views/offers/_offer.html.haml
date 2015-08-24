@@ -2,25 +2,26 @@
   
   .row
     .col-sm-3
-      .label.label-danger.pull-left= offer.sector.code
-      = link_to image_tag offer.sector.image(:icon)
-      .header
-        %h3
-          = link_to offer.position, offer, class: "btn btn-primary"
-      
-    .col-sm-6
+      = link_to image_tag offer.sector.image(:icon), class: "img"
+      %br
+      .label.label-danger= offer.sector.code
+    .col-sm-8
+      %h3
+        = link_to offer.position, offer
+        |
+        %i
+        = offer.employer.location
       %p  
       %before
       %strong
         = offer.employer.name
-        |
-      %i
-        = offer.employer.location
+      %br
+        = offer.description
       %br
       %after
       %i Available as of
       #{offer.started_at}
-    .col-sm-3
+    .col-lg-1
       .actions
         - if can? :update, offer
           = link_to edit_offer_path(offer), class: "btn btn-default" do

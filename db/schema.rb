@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150822091729) do
+ActiveRecord::Schema.define(version: 20150824105639) do
 
   create_table "articles", force: true do |t|
     t.text     "text"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150822091729) do
     t.integer  "created_by_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "description"
   end
 
   add_index "offers", ["created_by_id"], name: "index_offers_on_created_by_id", using: :btree
