@@ -1,12 +1,20 @@
 .offer {
-  border: 1px solid #e0e0e0;
   margin: 5px;
 }
-.col-sm-3 {
-  padding: 15px;
-  float:left;
+
+.row {
+  margin: 0px;
 }
 
-img {
-  float: left;
+.row.offer {
+  margin-left: 50px;
+  margin-top: -10px;
+}
+
+.col-xs-4 {
+  float:right;
+}
+
+.p {
+  font-size: 40%;
 }
