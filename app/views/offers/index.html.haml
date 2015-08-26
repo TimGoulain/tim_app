@@ -1,6 +1,9 @@
 %h1 Listing offers
-
-.offers
-  = render @offers
-
-= link_to 'New Offer', new_offer_path
+.row
+  .offers
+    = render @offers
+%br
+%br
+.row
+  .new
+    = link_to 'Post a new job', new_offer_path, class: "btn btn-success"

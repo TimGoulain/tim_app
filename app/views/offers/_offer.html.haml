@@ -1,32 +1,32 @@
 .offer
-  .sector
-    .row
+  .col-xs-8
+    .sector
       .label.label-warning= offer.sector.code
+    .core
+      %h4
+        = link_to offer.position, offer
+        |
+        %i
+        = offer.employer.location
+      %b
+        = offer.employer.name
+      %br
+      .description       
+        = offer.description
+      .dates
+        Posted on #{offer.created_at.strftime("%B %Y")}
+        |
+        Starts on #{offer.started_at}
+    
+
+  .col-xs-4
+    .actions
+      - if can? :update, offer
+        = link_to edit_offer_path(offer), class: "btn btn-default" do
+          %b.fa.fa-pencil-square-o
+      - if can? :destroy, offer
+        = link_to offer, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+          %b.fa.fa-times
   
-  .core
-    .row.offer
-      .col-xs-8
-        %h4
-          = link_to offer.position, offer
-          |
-          %i
-          = offer.employer.location
-        %p  
-        %b
-          = offer.employer.name
-        %br
-          = offer.description
-          Posted on #{offer.created_at.strftime("%B %Y")}
-          |
-          Starts on #{offer.started_at}
-  
-      .col-xs-4
-        .actions
-          - if can? :update, offer
-            = link_to edit_offer_path(offer), class: "btn btn-default" do
-              %b.fa.fa-pencil-square-o
-          - if can? :destroy, offer
-            = link_to offer, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
-              %b.fa.fa-times
-           
+       
   

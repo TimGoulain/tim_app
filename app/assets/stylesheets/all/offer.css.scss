@@ -2,19 +2,49 @@
   margin: 5px;
 }
 
-.row {
+.sector {
   margin: 0px;
 }
 
-.row.offer {
-  margin-left: 50px;
-  margin-top: -10px;
+.label.label-warning {
+  display: inline-block; 
+  width: 50px !important;
+  text-align: centre;
+  padding: 3px;
 }
 
+.core {
+  margin-left: 65px;
+  margin-top: -20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+h4 { 
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+  
 .col-xs-4 {
   float:right;
+  padding: 10px;
 }
 
-.p {
-  font-size: 40%;
+.description {
+  font-size: 90%;
+}
+
+.dates {
+  font-family: arial; 
+  font-size: 90%;
+  color:grey
+}
+
+.new {
+  margin-left: 65px;
+}
+
+.btn.btn-success {
+  font-size: 120%;
+  margin-left: 15px;
 }
