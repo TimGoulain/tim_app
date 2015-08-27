@@ -4,11 +4,11 @@
       .label.label-warning= offer.sector.code
     .core
       %h4
-        = link_to offer.position, offer
+        = link_to offer.position, offer, class: "offer-position"
         |
         %i
         = offer.employer.location
-      %b
+      %b.name
         = offer.employer.name
       %br
       .description       

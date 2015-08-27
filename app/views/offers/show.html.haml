@@ -1,24 +1,41 @@
 %p#notice= notice
 
-%p
-  %b Position:
-  = @offer.position
-%p
-  %b Employer:
-  = @offer.employer
-%p
-  %b Started at:
-  = @offer.started_at
-%p
-  %b Ended at:
-  = @offer.ended_at
-%p
-  %b Sector:
-  = @offer.sector
-%p
-  %b Created by:
-  = @offer.created_by
+%h1 THE JOB YOU'RE LOOKING FOR
 
-= link_to 'Edit', edit_offer_path(@offer)
-\|
-= link_to 'Back', offers_path
+%before
+%table.table
+  %tr
+  %th Your future position
+  %td= @offer.position
+  %tr
+  %th Your future employer
+  %td= @offer.employer.name
+  %tr
+  %th Where it will be
+  %td= @offer.employer.location
+  %tr
+  %th What it will be about
+  %td= @offer.description
+  %tr
+  %th In which sector
+  %td= @offer.sector.code
+  %tr
+  %th When it is supposed to start
+  %td= @offer.started_at      
+  %tr
+  %th When it is supposed to end
+  %td= @offer.ended_at
+  %tr
+  %th Who posted it
+  %td= @offer.created_by 
+
+%after
+%br
+.actions 
+  - if can? :update, @offer
+    = link_to edit_offer_path(@offer), class: "btn btn-default" do
+      %b.fa.fa-pencil-square-o
+  - if can? :destroy, @offer
+    = link_to @offer, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+      %b.fa.fa-times
+  = link_to 'Back', offers_path, class: "btn btn-default"
