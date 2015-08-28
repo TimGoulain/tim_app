@@ -32,13 +32,14 @@ h4 {
   margin-top: 3px;
   margin-bottom: 3px;
   color:#505050;
-  font-size: 115%;
+  font-size: 100%;
   font-weight: bold;
 }
 
 .offer-position {
   color:#5CB85C; 
   text-decoration:none;
+  font-size: 115%;
 }
 
 .offer-position:hover {
@@ -81,4 +82,8 @@ b.name {
   font-weight:bold;
   background-color:#F0AD4E;
   border-color:#F0AD4E;
+}
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+  padding:25px;
 }

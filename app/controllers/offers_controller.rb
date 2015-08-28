@@ -66,7 +66,7 @@ class OffersController < ApplicationController
       :position, :description, :employer_id, :sector_id, :started_at, :ended_at, :created_by_id,
       sector_attributes: [:id, :code, :image],
       employer_attributes: [
-        :id, :name, :location,
+        :id, :name, :location, :city,
         contacts_attributes:[:id, :email, :phone, :employer_id, :password]
       ]
     )

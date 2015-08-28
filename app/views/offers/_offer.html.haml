@@ -1,12 +1,15 @@
 .offer
-  .col-xs-8
+  .col-xs-9
     .sector
       .label.label-warning= offer.sector.code
+    .sector-img
+      %b.fa{class: offer_image(@offer)}
     .core
       %h4
         = link_to offer.position, offer, class: "offer-position"
         |
-        %i
+        = offer.employer.city
+        ;
         = offer.employer.location
       %b.name
         = offer.employer.name
@@ -19,7 +22,7 @@
         Starts on #{offer.started_at}
     
 
-  .col-xs-4
+  .col-xs-3
     .actions
       - if can? :update, offer
         = link_to edit_offer_path(offer), class: "btn btn-default" do
