@@ -20,7 +20,6 @@ class EmployersController < ApplicationController
   end
 
   def update
-    end
   end
 
   def destroy
