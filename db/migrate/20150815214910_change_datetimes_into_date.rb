@@ -1,6 +1,6 @@
 class ChangeDatetimesIntoDate < ActiveRecord::Migration
   def up
-    change_column :users, :birth, :date
+    add_column :users, :birth, :date
     change_column :jobs, :started_at, :date
     change_column :jobs, :ended_at, :date
   end
