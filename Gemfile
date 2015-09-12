@@ -29,6 +29,7 @@ gem 'cancancan'
 gem 'delayed_job_active_record'
 gem 'country_select'
 gem 'bootstrap-datepicker-rails'
+gem 'mandrill-api'
 
 group :development, :test do
   gem 'mysql2'

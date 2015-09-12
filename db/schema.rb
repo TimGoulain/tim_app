@@ -81,7 +81,10 @@ ActiveRecord::Schema.define(version: 20150912104624) do
     t.string  "memory"
     t.integer "score"
     t.string  "authentication_token"
+    t.integer "user_id"
   end
+
+  add_index "travels", ["user_id"], name: "index_travels_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
