@@ -1,0 +1,16 @@
+.travel.well
+  .header
+    .label.label-info= travel.visit
+  .information
+    = travel.departure_point
+    = travel.arrival_point
+    = travel.cotraveller
+    = travel.memory
+    %br
+    %strong Started at
+    #{travel.started_at.strftime("%F")}
+    %br
+    %strong Ended at 
+    #{travel.ended_at.strftime("%F")}
+    %br
+    = link_to "Edit", edit_travel_path(travel)

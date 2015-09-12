@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150829094523) do
+ActiveRecord::Schema.define(version: 20150912104624) do
 
   create_table "articles", force: true do |t|
     t.text     "text"
@@ -26,14 +26,6 @@ ActiveRecord::Schema.define(version: 20150829094523) do
     t.string "city"
   end
 
-  create_table "ideas", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.string   "picture"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "jobs", force: true do |t|
     t.string  "position"
     t.text    "description"
@@ -42,18 +34,12 @@ ActiveRecord::Schema.define(version: 20150829094523) do
     t.integer "user_id"
     t.integer "employer_id"
     t.integer "sector_id"
+    t.string  "authentication_token"
   end
 
   add_index "jobs", ["employer_id"], name: "index_jobs_on_employer_id", using: :btree
   add_index "jobs", ["sector_id"], name: "index_jobs_on_sector_id", using: :btree
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
-
-  create_table "microposts", force: true do |t|
-    t.text     "content"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "offers", force: true do |t|
     t.string   "position"
@@ -76,8 +62,25 @@ ActiveRecord::Schema.define(version: 20150829094523) do
     t.datetime "updated_at"
   end
 
+  create_table "recommendations", force: true do |t|
+    t.integer "note"
+    t.string  "comment"
+  end
+
   create_table "sectors", force: true do |t|
     t.string "code"
+  end
+
+  create_table "travels", force: true do |t|
+    t.string  "visit"
+    t.string  "departure_point"
+    t.string  "arrival_point"
+    t.date    "started_at"
+    t.date    "ended_at"
+    t.string  "cotraveller"
+    t.string  "memory"
+    t.integer "score"
+    t.string  "authentication_token"
   end
 
   create_table "users", force: true do |t|

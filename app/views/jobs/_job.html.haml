@@ -10,4 +10,5 @@
     %strong Ended at 
     #{job.ended_at.strftime("%F")}
     %br
+    = link_to "Ask for a recommendation", new_job_recommendation_path(job)
     = link_to "Edit", edit_job_path(job)

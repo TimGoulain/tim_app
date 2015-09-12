@@ -40,4 +40,13 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:position, :description, :started_at, :ended_at)
   end
+  
+  def request_recommendation
+    @job = Job.find(params[:id])
+    @job.authentication_token = SecureRandom.hex
+    @job.save
+    email = params[:email]
+    UserMailer.recommendation_request(@job, email).deliver
+  end
+  
 end

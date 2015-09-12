@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   # Associations
   has_many :jobs 
+  has_many :travels
   belongs_to :employer
   has_many :offers, foreign_key: "created_by_id"
   

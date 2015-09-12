@@ -1,0 +1,10 @@
+= simple_form_for(@travel) do |f|
+
+  = f.input :visit
+  = f.input :departure_point
+  = f.input :arrival_point
+  = f.input :started_at, as: :string, input_html: {class: 'date-picker'}
+  = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
+  = f.input :cotraveller
+  = f.input :memory
+  = f.submit
