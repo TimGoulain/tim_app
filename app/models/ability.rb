@@ -37,7 +37,11 @@ class Ability
     end
     
     can :manage, Job, user_id: user.id
+    
     can :manage, Travel, user_id: user.id
+    
+    can [:index, :create], Trip
+    can [:update, :destroy], Trip, user_id: user.id
     
     can [:read, :create], Employer
     

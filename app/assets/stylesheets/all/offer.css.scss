@@ -2,14 +2,6 @@
   margin: 5px;
 }
 
-h1 {
-  color:#086C08;
-  font-size:300%;
-  font-weight:bold;
-  margin-top:0px;
-  margin-bottom:20px;
-}
-
 .sector {
   margin: 0px;
 }
@@ -75,13 +67,6 @@ b.name {
 .btn.btn-success {
   font-size: 120%;
   margin-left: 15px;
-}
-
-.btn.btn-success:hover {
-  color:#5CB85C;
-  font-weight:bold;
-  background-color:#F0AD4E;
-  border-color:#F0AD4E;
 }
 
 .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {

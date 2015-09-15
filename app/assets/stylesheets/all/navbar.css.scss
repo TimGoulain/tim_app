@@ -7,9 +7,44 @@
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
-  font-family: papyrus;
+  font-family: Helvetica, Sans-Serif;
   &:hover {
     color: white;
+    text-decoration: none;
+  }
+}
+
+.navbar {
+  background-color: #F25F70;
+  color: white;
+  border: 0 !important;
+  margin-bottom: 0px;
+  height: 15px
+}
+
+.nav.navbar-nav.navbar-right {
+  color: white;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1;
+  padding: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.2s ease 0s;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }  
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+  margin-right: 5%;
+  margin-left: 5%;
+  &:hover {
+    color: #333;
     text-decoration: none;
   }
 }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150912104624) do
+ActiveRecord::Schema.define(version: 20150915140212) do
 
   create_table "articles", force: true do |t|
     t.text     "text"
@@ -85,6 +85,20 @@ ActiveRecord::Schema.define(version: 20150912104624) do
   end
 
   add_index "travels", ["user_id"], name: "index_travels_on_user_id", using: :btree
+
+  create_table "trips", force: true do |t|
+    t.string  "name"
+    t.string  "departure_point"
+    t.string  "arrival_point"
+    t.date    "started_at"
+    t.date    "ended_at"
+    t.boolean "flexible_date"
+    t.string  "cotraveller"
+    t.integer "user_id"
+    t.integer "phone"
+  end
+
+  add_index "trips", ["user_id"], name: "index_trips_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

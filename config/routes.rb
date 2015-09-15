@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :offers
   resources :travels
+  resources :trips
   
   devise_for :users
   devise_scope :user do

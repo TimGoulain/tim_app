@@ -1,0 +1,28 @@
+.trip
+  .col-xs-9
+    .location
+      .label.label-warning= trip.departure_point
+      .label.label-warning= trip.arrival_point
+    .core
+      %h4
+        = trip.name
+        ;
+        = trip.cotraveller    
+      .dates
+        Departure on #{trip.started_at.strftime("%B %Y")}
+        |
+        Starts on #{trip.ended_at.strftime("%B %Y")}
+        = trip.flexible_date
+        = trip.phone
+
+  .col-xs-3
+    .actions
+      - if can? :update, trip
+        = link_to edit_trip_path(trip), class: "btn btn-default" do
+          %b.fa.fa-pencil-square-o
+      - if can? :destroy, trip
+        = link_to trip, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+          %b.fa.fa-times
+  
+       
+  

@@ -1,0 +1,37 @@
+%p#notice= notice
+
+%h1 The travel offer you are looking for
+
+%before
+%table.table
+  %tr
+  %th Name of the travel offer
+  %td= @trip.name
+  %tr
+  %th Departure point
+  %td= @trip.departure_point
+  %tr
+  %th Arrival point
+  %td= @trip.arrival_point
+  %tr
+  %th Flexible date
+  %td= @trip.flexible_date
+  %tr
+  %th The other travellers 
+  %td= @trip.cotraveller
+  %tr
+  %th Contact details
+  %td= @trip.phone      
+  %th Who posted it
+  %td= @trip.user_id 
+
+%after
+%br
+.actions 
+  - if can? :update, @trip
+    = link_to edit_trip_path(@trip), class: "btn btn-default" do
+      %b.fa.fa-pencil-square-o
+  - if can? :destroy, @trip
+    = link_to @trip, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+      %b.fa.fa-times
+  = link_to 'Back', trips_path, class: "btn btn-default"
