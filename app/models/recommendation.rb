@@ -1,5 +1,5 @@
 # encoding: utf-8
-class Recommendation < ActiveMailer::Base
+class Recommendation < ActionMailer::Base
   
   # Associations
   
