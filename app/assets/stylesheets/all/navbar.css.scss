@@ -22,39 +22,68 @@
   height: 60px;
 }
 
-.navbar-collapse.collapse {
-  height: 60px;
-}
+.collapse.navbar-collapse {
 
-.nav.navbar-nav.navbar-right {
-  color: white;
-  display: block;
-  height: 60px;
-  padding-top: 5px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  line-height: 1;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  margin-right: 13%;
-  transition: all 0.2s ease 0s;
-  &:hover {
-    color: black;
+  ul.nav.navbar-nav.navbar-right {
+    display: block;
+    margin-right: 18%;
+    list-style: outside none none;
+    list-style-type: none;
+    list-style-image: none;
+    list-style-position: outside;
+    color: white;
+    height: 60px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1;
     text-decoration: none;
-  }  
-}
-
-.navbar-inverse .navbar-nav > li > a {
-  color: white;
-  margin-right: 5%;
-  margin-left: 5%;
-  &:hover {
-    color: #333;
-    text-decoration: none;
+    text-transform: uppercase;
+    &:hover {
+      color: black;
+      text-decoration: none;
+    }  
   }
-}
 
+  li { 
+    display: inline-block;
+    border: 0px none;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    border-top-color: -moz-use-text-color;
+    border-right-color: -moz-use-text-color;
+    border-bottom-color: -moz-use-text-color;
+    border-left-color: -moz-use-text-color;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image-source: none;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-width: 1 1 1 1;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    padding: 0.75em 1em 0.75em 0px;
+    padding-top: 0.75em;
+    padding-right: 1em;
+    padding-bottom: 0.75em;
+    padding-left: 0px;
+  
+    a {
+      color: white;
+      &:hover {
+        color: #333;
+        text-decoration: none;
+      }
+    }
+  }
+} 
+ 
 .navbar-btn {
   margin-bottom: 10px;
   margin-top: 10px;
