@@ -1,5 +1,5 @@
 .trip-index {
-  background: #FFF none repeat scroll 0% 0%;
+  background-color: #FFF;
   padding: 3em 55px 3em 201px;
   position: relative;
 
@@ -9,4 +9,16 @@
     letter-spacing: 6px;
     text-transform: uppercase;
   }
+}
+
+.core {
+  font-size: 18px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.dates {
+  color: gray;
+  letter-spacing: 1px;
+  font-size: 14px;
 }

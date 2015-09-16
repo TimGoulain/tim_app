@@ -1,30 +1,29 @@
-.trip
-  .col-xs-9
-    .location
-      From
-      .label.label-info= trip.departure_point
-      To
-      .label.label-info= trip.arrival_point
-    .core
-      %h4
-        = trip.name
-        ;
+.col-xs-9
+  .location
+    .label.label-danger= trip.departure_point
+    .fa.fa-share
+    .label.label-danger= trip.arrival_point
+  .core
+    %h5
+      = trip.name
+      - if trip.cotraveller.present?
+        | with
         = trip.cotraveller    
-      .dates
-        Departure on #{trip.started_at.strftime("%B %Y")}
-        |
-        Starts on #{trip.ended_at.strftime("%B %Y")}
-        = trip.flexible_date
-        = trip.phone
+  .dates
+    Departure on #{trip.started_at.strftime("%B %Y")}
+    |
+    Starts on #{trip.ended_at.strftime("%B %Y")}
+    = trip.flexible_date
+    = trip.phone
 
-  .col-xs-3
-    .actions
-      - if can? :update, trip
-        = link_to edit_trip_path(trip), class: "btn btn-default" do
-          %b.fa.fa-pencil-square-o
-      - if can? :destroy, trip
-        = link_to trip, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
-          %b.fa.fa-times
+.col-xs-3
+  .actions
+    - if can? :update, trip
+      = link_to edit_trip_path(trip), class: "btn btn-default" do
+        %b.fa.fa-pencil-square-o
+    - if can? :destroy, trip
+      = link_to trip, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+        %b.fa.fa-times
   
        
   

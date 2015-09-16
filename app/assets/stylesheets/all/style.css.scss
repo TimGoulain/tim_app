@@ -6,7 +6,7 @@ body {
   margin-right: 5%;
   margin-bottom: 0px;
   margin-left: 5%;  
-  height: auto !important;
+  height: 100% !important;
 }
 
 section {
@@ -15,4 +15,21 @@ section {
 
 textarea {
   resize: vertical;
+}
+
+.wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+.container {
+	padding-bottom:140px;
+}
+
+.footer {
+	height: auto;
+  width: 100%;
+	position:absolute;
+	bottom:0;
+	left:0;
 }
