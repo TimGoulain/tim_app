@@ -1,8 +1,10 @@
 .trip
   .col-xs-9
     .location
-      .label.label-warning= trip.departure_point
-      .label.label-warning= trip.arrival_point
+      From
+      .label.label-info= trip.departure_point
+      To
+      .label.label-info= trip.arrival_point
     .core
       %h4
         = trip.name

@@ -1,8 +1,28 @@
 - provide(:title, "Home")
 %center.jumbotron
-  %h1 Home
-  %p This is the home page of the website for Workholiders in Australia
-  = link_to new_user_registration_path, class: "btn btn-primary btn-lg" do
-    %b.fa.fa-check
-    Sign up now!
+  %h1.home.title Organize your life in Australia
 
+  .advertising
+    %br
+    .first
+      %adbutton
+        %b.menu.fa.fa-pencil-square-o
+      Keep track of your experience
+    %br
+    .second
+      %adbutton
+        %b.menu.fa.fa-briefcase 
+      Find a job more easily
+    %br
+    .third
+      %adbutton
+        %b.menu.fa.fa-bus 
+      Join other travellers to discover the country
+    %br
+  
+  .signup
+    %p.home.content
+    = link_to new_user_registration_path, class: "btn btn-info btn-lg" do
+      %b.fa.fa-check
+      Sign up now!
+  

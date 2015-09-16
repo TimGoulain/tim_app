@@ -1,9 +1,10 @@
-%h1 JOIN A TRAVEL
-.row
-  .trips
-    = render @trips
-%br
-%br
-.row
-  .new
-    = link_to 'Post a new travel offer', new_trip_path, class: "btn btn-success"
+.trip-index
+  %h1 join a travel
+  .row
+    .trips
+      = render @trips
+  %br
+  %br
+  .row
+    .new
+      = link_to 'Post a new travel offer', new_trip_path, class: "btn btn-info"
