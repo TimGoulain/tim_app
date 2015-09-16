@@ -7,17 +7,3 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap-datepicker3";
-@media (min-width: 768px) and (max-width: 991px) {
-    .collapse.navbar-collapse {
-        display: none !important;
-    }
-    ul.nav.navbar-nav.navbar-right {
-        display: block !important;
-    }
-    .navbar-header .collapse, .navbar-toggle {
-        display:block !important;
-    }
-    .navbar-header {
-        float:none;
-    }
-}
