@@ -1,46 +1,50 @@
 - provide(:title, "My profile")
 
-%h1.strong My profile 
+%h1.strong 
+  = @user.name
+%h3
+  = @user.headline
 
 .row
-  .col-sm-4
-    .well
-      %i My email:
-      #{@user.email}
-      %br
-      %i My location:
-      - if @user.current_location.blank?
-        On the road
-      - else
-        = @user.current_location
-      %br
-      %i My phone number:
-      = @user.phone
-      %br
-      - if @user.driving_licence
-        .label.label-info Driving Licence 
-    = link_to 'Edit', profile_edit_path
-    = link_to 'Back', users_path
-    = link_to 'Add a job', new_job_path
-    = link_to 'Add a travel', new_travel_path
-    
-  .col-sm-8
-    .label.label-primary
-      = @user.name
-      %br
-      %br
-      = @user.headline
-      %br
-      %br
-    .well.well-sm
-      %strong About me
-    .well.well-lg= @user.about_me
+  .well
+    %b.fa.fa-map-marker
+    - if @user.current_location.blank?
+      On the road
+    - else
+      = @user.current_location
     %br
+    %b.fa.fa-envelope
+    = @user.email    
+    |
+    %b.fa.fa-phone
+    = @user.phone
     %br
-    %h2 LATEST JOB EXPERIENCES
-    = render @user.jobs 
-    %h2 LATEST TRAVEL EXPERIENCES 
-    = render @user.travels
+    - if @user.driving_licence
+      %b.fa.fa-car
+      Driving Licence 
+  = link_to 'Edit', profile_edit_path
+  = link_to 'Back', users_path
+  %br
+  %br
+
+.row
+  .col-xs-6
+    = link_to 'Add a job', new_job_path, class: "btn btn-info"
+  .col-xs-6
+    = link_to 'Add a travel', new_travel_path, class: "btn btn-success"
+%br
+%br
+.else
+  .well.well-lg
+    %strong About me
+    %br
+    = @user.about_me
+  %br
+  %br
+  %h2 Latest job experiences
+  = render @user.jobs 
+  %h2 Latest travel experiences
+  = render @user.travels
     
 	
   

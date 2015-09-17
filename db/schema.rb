@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915140212) do
+ActiveRecord::Schema.define(version: 20150917173147) do
 
   create_table "articles", force: true do |t|
     t.text     "text"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20150915140212) do
     t.string  "cotraveller"
     t.integer "user_id"
     t.integer "phone"
+    t.string  "email"
   end
 
   add_index "trips", ["user_id"], name: "index_trips_on_user_id", using: :btree

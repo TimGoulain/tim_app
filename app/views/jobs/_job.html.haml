@@ -1,14 +1,22 @@
 .job.well
-  .header
-    .label.label-info= job.position
-  .description
-    = job.description
-    %br
-    %strong Started at
-    #{job.started_at.strftime("%F")}
-    %br
-    %strong Ended at 
-    #{job.ended_at.strftime("%F")}
-    %br
-    = link_to "Ask for a recommendation", new_job_recommendation_path(job)
-    = link_to "Edit", edit_job_path(job)
+  .col-xs-9
+    .sector
+      .label.label-warning= job.position
+    .core
+      %h4
+        = job.description
+      %br
+      %strong Started at
+      #{job.started_at.strftime("%F")}
+      %br
+      %strong Ended at 
+      #{job.ended_at.strftime("%F")}    
+
+  .col-xs-3
+    .actions
+      = link_to edit_job_path(job), class: "btn btn-default" do
+        %b.fa.fa-pencil-square-o
+      = link_to "Ask for a recommendation", new_job_recommendation_path(job), class: "btn btn-default"
+      - if can? :destroy, job
+        = link_to job, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+          %b.fa.fa-times

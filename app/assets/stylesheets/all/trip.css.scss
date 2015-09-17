@@ -1,24 +1,44 @@
 .trip-index {
   background-color: #FFF;
-  padding: 3em 55px 3em 201px;
+  padding-top: 30px;
   position: relative;
 
   h1 {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid lightgray;
     font-size: 200%;
     letter-spacing: 6px;
     text-transform: uppercase;
+    padding-bottom: 10px;
   }
 }
 
-.core {
-  font-size: 18px;
-  margin-top: 8px;
-  margin-bottom: 4px;
+.location {
+  font-size: 110%;
+}
+
+h5.name {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 
 .dates {
   color: gray;
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 12px;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px
+}
+
+.description {
+  padding-top: 15px;
+}
+
+.join {
+  padding-top: 25px;
+  font-size: 150%;
+}
+
+.actions {
+  padding-top: 20px;
 }

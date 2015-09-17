@@ -1,22 +1,29 @@
-.col-xs-9
-  .location
-    .label.label-danger= trip.departure_point
-    .fa.fa-share
-    .label.label-danger= trip.arrival_point
-  .core
-    %h5
-      = trip.name
-      - if trip.cotraveller.present?
-        | with
-        = trip.cotraveller    
-  .dates
-    Departure on #{trip.started_at.strftime("%B %Y")}
-    |
-    Starts on #{trip.ended_at.strftime("%B %Y")}
-    = trip.flexible_date
-    = trip.phone
+.col-xs-7
+  .description
+    .location
+      .label.label-warning= trip.departure_point
+      .fa.fa-share
+      .label.label-warning= trip.arrival_point
+    .core
+      %h5.name
+        = trip.name
+        - if trip.cotraveller.present?
+          | with
+          = trip.cotraveller    
+    .dates
+      Departure on #{trip.started_at.strftime("%d %B %Y")}
+      |
+      Arrival on #{trip.ended_at.strftime("%d %B %Y")}
+      - if trip.flexible_date.present?
+        (the arrival date is flexible!)
+      = trip.phone
 
 .col-xs-3
+  .join
+    = link_to trip_path(trip), class: "btn btn-danger" do
+      I want to join!
+
+.col-xs-2    
   .actions
     - if can? :update, trip
       = link_to edit_trip_path(trip), class: "btn btn-default" do
@@ -24,6 +31,4 @@
     - if can? :destroy, trip
       = link_to trip, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
         %b.fa.fa-times
-  
-       
   
