@@ -1,7 +1,7 @@
 .offer {
   margin: 5px;
 
-  .sector {
+  .offer.sector {
     margin: 0px;
   }
   
@@ -12,7 +12,7 @@
     padding: 3px;
   }
   
-  .core {
+  .offer.core {
     margin-left: 90px;
     margin-top: -20px;
     padding-bottom: 10px;
@@ -47,13 +47,13 @@
     color:#686868;
   }
   
-  .description {
+  .offer.description {
     font-size: 90%;
     font-family: arial;
     font-style: italic;
   }
   
-  .dates {
+  .offer.dates {
     font-family: arial; 
     font-size: 90%;
     color:grey

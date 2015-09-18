@@ -1,16 +1,36 @@
-.travel.well
-  .header
-    .label.label-info= travel.visit
-  .information
-    = travel.departure_point
-    = travel.arrival_point
-    = travel.cotraveller
-    = travel.memory
-    %br
-    %strong Started at
-    #{travel.started_at.strftime("%F")}
-    %br
-    %strong Ended at 
-    #{travel.ended_at.strftime("%F")}
-    %br
-    = link_to "Edit", edit_travel_path(travel)
+.travel  
+  .col-xs-7
+    .travel.well
+      .travel.header
+        .label.label-warning= "TRIP"
+        = travel.visit
+      .travel.else
+        .travel.dates
+          Started on
+          #{travel.started_at.strftime("%d %B %Y")}
+          Ended on 
+          #{travel.ended_at.strftime("%d %B %Y")}
+        .travel.route  
+          From
+          = travel.departure_point
+          To
+          = travel.arrival_point
+        .travel.companions
+          - if travel.cotraveller
+            With
+            = travel.cotraveller
+        .travel.description  
+          = travel.memory
+  
+  .col-xs-3
+    .recommendation
+      Future link to ask for a comment
+  
+  .col-xs-3
+    .actions
+      - if can? :edit, travel
+        = link_to edit_travel_path(travel), class: "btn btn-default" do
+          %b.fa.fa-pencil-square-o   
+      - if can? :destroy, travel
+        = link_to travel, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+          %b.fa.fa-times

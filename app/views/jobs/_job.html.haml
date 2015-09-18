@@ -2,19 +2,22 @@
   .col-xs-7
     .job.well
       .label.label-info= job.code
-      = job.position
-      %strong From
-      #{job.started_at.strftime("%d %B %Y")}
-      %strong To 
-      #{job.ended_at.strftime("%d %B %Y")}   
-      %br
-      = job.name
-      |
-      = job.city
-      |
-      = job.location
-      %br
-      = job.description
+      .job.name
+        = job.position
+        at
+        = job.name
+      .job.else
+        .job.dates
+          From
+          #{job.started_at.strftime("%d %B %Y")}
+          To 
+          #{job.ended_at.strftime("%d %B %Y")}   
+        .job.places
+          = job.city
+          |
+          = job.location
+        .job.description
+          = job.description
        
   .col-xs-3
     .recommendation

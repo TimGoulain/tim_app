@@ -12,7 +12,7 @@
   }
 }
 
-.location {
+.trip.location {
   font-size: 110%;
 }
 
@@ -22,7 +22,7 @@ h5.name {
   margin-bottom: 0px;
 }
 
-.dates {
+.trip.dates {
   color: gray;
   letter-spacing: 1px;
   font-size: 12px;
@@ -30,15 +30,15 @@ h5.name {
   padding-bottom: 10px
 }
 
-.description {
+.trip.description {
   padding-top: 15px;
 }
 
-.join {
+.trip.join {
   padding-top: 25px;
   font-size: 150%;
 }
 
-.actions {
+.trip.actions {
   padding-top: 20px;
 }

@@ -1,16 +1,16 @@
 .col-xs-7
-  .description
-    .location
+  .trip.description
+    .trip.location
       .label.label-warning= trip.departure_point
       .fa.fa-share
       .label.label-warning= trip.arrival_point
-    .core
+    .trip.core
       %h5.name
         = trip.name
         - if trip.cotraveller.present?
           | with
           = trip.cotraveller    
-    .dates
+    .trip.dates
       Departure on #{trip.started_at.strftime("%d %B %Y")}
       |
       Arrival on #{trip.ended_at.strftime("%d %B %Y")}
@@ -19,12 +19,12 @@
       = trip.phone
 
 .col-xs-3
-  .join
+  .trip.join
     = link_to trip_path(trip), class: "btn btn-danger" do
       I want to join!
 
 .col-xs-2    
-  .actions
+  .trip.actions
     - if can? :update, trip
       = link_to edit_trip_path(trip), class: "btn btn-default" do
         %b.fa.fa-pencil-square-o

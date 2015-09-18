@@ -1,10 +1,10 @@
 .offer
   .col-xs-9
-    .sector
+    .offer.sector
       .label.label-warning= offer.sector.code
     .sector-img
       %b.fa{class: offer_image(offer)}
-    .core
+    .offer.core
       %h4
         = link_to offer.position, offer, class: "offer-position"
         |
@@ -12,16 +12,16 @@
         ;
         = offer.employer.location
       %br
-      .description       
+      .offer.description       
         = offer.description
-      .dates
+      .offer.dates
         Posted on #{offer.created_at.strftime("%B %Y")}
         |
         Starts on #{offer.started_at}
     
 
   .col-xs-3
-    .actions
+    .offer.actions
       - if can? :update, offer
         = link_to edit_offer_path(offer), class: "btn btn-default" do
           %b.fa.fa-pencil-square-o
