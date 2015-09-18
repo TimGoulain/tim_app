@@ -1,20 +1,21 @@
 .job 
   .col-xs-7
     .job.well
+      .label.label-info= job.code
       = job.position
-      |
-      = job.employer.city
-      |
-      = job.employer.location
-      %br
-      = job.description
-      %br
       %strong From
       #{job.started_at.strftime("%d %B %Y")}
-      %br
       %strong To 
-      #{job.ended_at.strftime("%d %B %Y")}    
-  
+      #{job.ended_at.strftime("%d %B %Y")}   
+      %br
+      = job.name
+      |
+      = job.city
+      |
+      = job.location
+      %br
+      = job.description
+       
   .col-xs-3
     .recommendation
       = link_to "Ask for a recommendation", new_job_recommendation_path(job), class: "btn btn-default"

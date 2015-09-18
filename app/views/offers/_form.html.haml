@@ -14,7 +14,7 @@
     = f.input :description
     = f.input :started_at, as: :string, input_html: {class: 'date-picker'}
     = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
-    = f.association :sector, placeholder: "Ex: Catering"
+    = f.association :sector
 
   .form-actions
     = f.button :submit

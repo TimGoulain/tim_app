@@ -29,6 +29,8 @@ module OffersHelper
       'fa-fighter-jet'
     elsif sector_code == "Construction"
       'fa-building-o'
+    elsif sector_code == "Other"
+      'fa-fa-odnoklassniki'
     end
   end
 end

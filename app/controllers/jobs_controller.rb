@@ -7,11 +7,12 @@ class JobsController < ApplicationController
   end
 
   def new
-    # @job = current_user.jobs.build
+    @job.build_employer
   end
 
   def edit
     # @job = Job.find(params[:id])
+    @job.build_employer unless @job.employer
   end
 
   def create
@@ -43,7 +44,7 @@ class JobsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def job_params
     params.require(:job).permit(
-      :position, :description, :started_at, :ended_at, :employer_id,
+      :position, :description, :started_at, :ended_at, :employer_id, :sector_id,
       employer_attributes: [
         :id, :name, :location, :city
       ]
