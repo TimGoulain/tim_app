@@ -1,6 +1,10 @@
 # encoding: utf-8
 class JobsController < ApplicationController
+
   load_and_authorize_resource through: :current_user
+
+  def show
+  end
 
   def new
     # @job = current_user.jobs.build
@@ -38,7 +42,12 @@ class JobsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def job_params
-    params.require(:job).permit(:position, :description, :started_at, :ended_at)
+    params.require(:job).permit(
+      :position, :description, :started_at, :ended_at, :employer_id,
+      employer_attributes: [
+        :id, :name, :location, :city
+      ]
+    )
   end
   
   def request_recommendation
@@ -48,5 +57,9 @@ class JobsController < ApplicationController
     email = params[:email]
     UserMailer.recommendation_request(@job, email).deliver
   end
+  
+  def employer_params
+    params[:offer][:employer_attributes]
+  end  
   
 end

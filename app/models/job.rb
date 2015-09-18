@@ -5,11 +5,10 @@ class Job < ActiveRecord::Base
   
   belongs_to :user 
   belongs_to :employer
+  accepts_nested_attributes_for :employer
   belongs_to :sector
   
   # Validations
-
-  validates :position, presence: true
   
   # Callbacks
 

@@ -1,3 +1,4 @@
+# encoding: utf-8
 class OffersController < ApplicationController
 
   before_action :try_find_employer_from_email, only: :create
