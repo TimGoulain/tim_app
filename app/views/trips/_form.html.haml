@@ -2,9 +2,10 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name, placeholder: "Give a name to your trip, ex: Cool trip in a van with nice people"
-    = f.input :departure_point
-    = f.input :arrival_point
+    = f.input :name, label: "Name of your trip", placeholder: "Give a name to your trip, ex: Cool trip in a van with nice people"
+    = f.input :first_name, label: "Your name", placeholder: "ex: Timmy"
+    = f.input :departure_point, label: "City or place of departure", placeholder: "ex: Perth"
+    = f.input :arrival_point, label: "City or place of arrival", placeholder: "ex: Broome"
     = f.input :started_at, as: :string, input_html: {class: 'date-picker'}
     = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
     = f.input :flexible_date, label: "Are these dates flexible?"

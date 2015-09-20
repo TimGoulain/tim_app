@@ -1,5 +1,5 @@
 .travel  
-  .col-xs-7
+  .col-xs-8
     .travel.well
       .travel.header
         .label.label-warning= "TRIP"
@@ -22,11 +22,11 @@
         .travel.description  
           = travel.memory
   
-  .col-xs-3
+  .col-xs-2
     .recommendation
       Future link to ask for a comment
   
-  .col-xs-3
+  .col-xs-2
     .actions
       - if can? :edit, travel
         = link_to edit_travel_path(travel), class: "btn btn-default" do

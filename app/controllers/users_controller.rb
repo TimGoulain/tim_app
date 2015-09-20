@@ -10,7 +10,10 @@ class UsersController < ApplicationController
 
   def edit
   end
-
+  
+  def new
+  end
+    
   def update
     if @user.update(user_params)
       redirect_to @user, notice: 'Your profile was updated successfully.'
@@ -25,7 +28,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :name, :email, :country, :birth, :phone, :driving_licence, :linkedin_url,
-      :current_location, :headline, :about_me, :skills
+      :current_location, :headline, :about_me, :skills, :job
     )
   end
 end

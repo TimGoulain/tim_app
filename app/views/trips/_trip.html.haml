@@ -11,9 +11,13 @@
           | with
           = trip.cotraveller    
     .trip.dates
-      Departure on #{trip.started_at.strftime("%d %B %Y")}
-      |
-      Arrival on #{trip.ended_at.strftime("%d %B %Y")}
+      - if trip.started_at
+        Departure on 
+        #{trip.started_at.strftime("%d %B %Y")}
+        |
+      - if trip.ended_at
+        Arrival on 
+        #{trip.ended_at.strftime("%d %B %Y")}
       - if trip.flexible_date.present?
         (the arrival date is flexible!)
       = trip.phone

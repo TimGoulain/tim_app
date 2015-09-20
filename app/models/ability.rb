@@ -40,8 +40,11 @@ class Ability
     
     can :manage, Travel, user_id: user.id
     
-    can [:index, :create, :read], Trip
-    can [:update, :destroy], Trip, user_id: user.id
+    can [:update, :destroy], User, user_id: user.id
+    can :read, User
+    
+    can [:index, :read], Trip
+    can [:create, :update, :destroy], Trip, user_id: user.id
     
     can [:read, :create], Employer
     

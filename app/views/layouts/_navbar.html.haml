@@ -11,10 +11,10 @@
       - if !user_signed_in?
         .navbar-right{style: "margin-right: 0; text-align: center;"}
           = link_to "Log in", new_user_session_path, class: 'btn btn-info navbar-btn', id: 'loginBtn'
-        %ul.nav.navbar-nav.navbar-right{style: "margin: 0 15px"}
-          %li= link_to "About", about_path
-          %li= link_to "Travel offers", trips_path
-          %li= link_to "Job offers", offers_path
+      %ul.nav.navbar-nav.navbar-right{style: "margin: 0 15px"}
+        %li= link_to "About", about_path
+        %li= link_to "Travel offers", trips_path
+        %li= link_to "Job offers", offers_path
         - if user_signed_in?
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: '#'}

@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :travels
   belongs_to :employer
   has_many :offers, foreign_key: "created_by_id"
+  has_many :trips
   
   # Validations
 

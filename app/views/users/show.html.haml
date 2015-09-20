@@ -1,63 +1,87 @@
 - provide(:title, "My profile")
-
-.col-xs-4
-  .information
-    = @user.birth
-    %b.fa.fa-map-marker
-      - if @user.current_location.blank?
-        On the road
-      - else
-        = @user.current_location
-    %br
-    %b.fa.fa-envelope
-      = @user.email    
-    |
-    %b.fa.fa-phone
-      = @user.phone
-    %br
-    - if @user.driving_licence
-      %b.fa.fa-car
-        Driving Licence 
- 
-  .sectors
-    Blabla
-
-  .skills
-    = @user.skills
+.leftpart  
+  .col-sm-4
+    .well.picture
+      Blabla
+    .well.information
+      .label.label-default= "main information"  
+      .job.information
+        .birth
+          - if @user.birth
+            Born on
+            #{@user.birth.strftime("%d %B %Y")}
+        .user.location
+          %b.fa.fa-map-marker
+          - if @user.current_location.blank?
+            On the road
+          - else
+            = @user.current_location
+        .user.email
+          - if @user.email
+            %b.fa.fa-envelope
+            = @user.email    
+        .user.phone
+          - if @user.phone
+            %b.fa.fa-phone
+            = @user.phone
+        .user.driving
+        - if @user.driving_licence
+          %b.fa.fa-car
+          Driving Licence 
   
-  .languages
-    Blabla
+    .well.sectors
+      .label.label-default= "sectors"  
+      %br
+      .sectors.content
+        Blabla
   
-  .computer
-    Blabla
- 
-.col-xs-8
-  .row.header
-    %h1.strong 
-      = @user.name
-  .well.well-lg
-    %strong About me
-    %br
-      = @user.about_me
-
+    .well.skills
+      .label.label-default= "skills"
+      %br
+      .skills.content
+        = @user.skills
+    
+    .well.languages
+      .label.label-default= "Languages"  
+      %br
+      .languages.content
+        Languages
+    
+    .well.computer
+      .label.label-default= "computer skills"  
+      %br
+      .computer.content
+        Computer skills
+.rightpart  
+  .col-sm-8
+    .row.header
+      %h1.strong 
+        = @user.name
+    .well.well-lg.about
+      .aboutme
+        %strong About me
+      .aboutmetext
+        = @user.about_me
+  
   - if can? :edit, @user 
     = link_to profile_edit_path, class: "btn btn-default" do
       %b.fa.fa-pencil-square-o
-  
-  - if can? :edit, @user
-    .row.add
-      .col-xs-6
-        = link_to 'Add a job', new_job_path, class: "btn btn-info"
-      .col-xs-6
-        = link_to 'Add a travel', new_travel_path, class: "btn btn-success"
-
-  .experiences  
-    %h2 Latest experiences
-    .row.jobs
-      = render @user.jobs 
     %br
-    .row.travels
-      = render @user.travels 
-
-  .row.back
-    = link_to 'Back', users_path, class: "btn btn-default"
+  
+    .experiences  
+      %h2 Latest experiences
+      - if can? :edit, @user
+        .row.add
+          .col-xs-6
+            = link_to 'Add a job', new_job_path, class: "btn btn-info"
+          .col-xs-6
+            = link_to 'Add a travel', new_travel_path, class: "btn btn-warning"
+      %br
+      .row.jobs
+        = render @user.jobs 
+      %br
+      .row.travels
+        = render @user.travels 
+  
+    .row.back
+      = link_to 'Back', users_path, class: "btn btn-default"

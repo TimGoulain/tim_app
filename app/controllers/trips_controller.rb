@@ -15,6 +15,7 @@ class TripsController < ApplicationController
   end
 
   def create
+ 
     if @trip.save
       redirect_to trips_path, notice: 'Your travel offer was successfully added to the list!'
     else
@@ -38,6 +39,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:name, :departure_point, :arrival_point, :started_at, :ended_at, :flexible_date, :cotraveller, :user_id, :phone, :email)
+    params.require(:trip).permit(:name, :departure_point, :arrival_point, :started_at, :ended_at, :flexible_date, :cotraveller, :user_id, :phone, :email, :created_by_id)
   end
-  end
+    
+end
