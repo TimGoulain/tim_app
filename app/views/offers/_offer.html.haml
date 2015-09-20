@@ -1,26 +1,28 @@
-.offer
-  .col-xs-9
-    .offer.sector
-      .label.label-warning= offer.sector.code
+.offer.all
+  .col-sm-2
+    .label.label-warning= offer.sector.code
     .sector-img
       %b.fa{class: offer_image(offer)}
+  .col-sm-8
     .offer.core
       %h4
         = link_to offer.position, offer, class: "offer-position"
         |
         = offer.employer.city
-        ;
+        -
         = offer.employer.location
-      %br
-      .offer.description       
-        = offer.description
-      .offer.dates
-        Posted on #{offer.created_at.strftime("%B %Y")}
-        |
+    .offer.startson
+      - if offer.started_at 
         Starts on #{offer.started_at}
-    
-
-  .col-xs-3
+      - if offer.ended_at
+        Ends on #{offer.ended_at}
+    .offer.description       
+      - if offer.description
+        = offer.description
+    .offer.postedon
+      Posted on #{offer.created_at.strftime("%B %Y")}  
+  
+  .col-sm-2
     .offer.actions
       - if can? :update, offer
         = link_to edit_offer_path(offer), class: "btn btn-default" do
@@ -28,6 +30,3 @@
       - if can? :destroy, offer
         = link_to offer, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
           %b.fa.fa-times
-  
-       
-  
