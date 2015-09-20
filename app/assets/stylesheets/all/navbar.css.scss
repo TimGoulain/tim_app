@@ -33,6 +33,11 @@
   }  
 }
 
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #F25F70;
+    color: #FFF;
+}
+
 .navbar-inverse .navbar-nav > li > a {
   color: white;
   &:hover {

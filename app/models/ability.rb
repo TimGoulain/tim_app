@@ -35,13 +35,12 @@ class Ability
     if user.admin?
       can :manage, :all
     end
+
+    can :manage, User
     
     can :manage, Job, user_id: user.id
     
     can :manage, Travel, user_id: user.id
-    
-    can [:update, :destroy], User, user_id: user.id
-    can :read, User
     
     can [:index, :read], Trip
     can [:create, :update, :destroy], Trip, user_id: user.id

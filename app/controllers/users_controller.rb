@@ -1,8 +1,10 @@
 # encoding: utf-8
 class UsersController < ApplicationController
+  
   load_and_authorize_resource
 
   def index
+    @user = current_user
   end
 
   def show
@@ -28,7 +30,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :name, :email, :country, :birth, :phone, :driving_licence, :linkedin_url,
-      :current_location, :headline, :about_me, :skills, :job
+      :current_location, :headline, :about_me, :skills
     )
   end
 end
