@@ -1,9 +1,8 @@
-%h1 FIND A JOB
-.row 
-  .offers
+.trip-index
+  %h1 find a job
+  
+.container-fluid.offers
+  .row.offer
     = render @offers
-%br
-%br
-.row
-  .new
-    = link_to 'Post a new job', new_offer_path, class: "btn btn-success"
+  .row.newoffer
+    = link_to 'Post a new job', new_offer_path, class: "btn btn-info"

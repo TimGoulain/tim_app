@@ -1,5 +1,64 @@
+.offer-index {
+  background-color: #FFF;
+  padding-top: 30px;
+  position: relative;
+
+  h1 {
+    border-bottom: 1px solid lightgray;
+    font-size: 200%;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+  }
+}
+
+.well.offer.core {
+  padding-top: 10px; 
+  padding-left: 0px;
+  padding-bottom: 5px;
+  background-color: white;
+  border: 0px;
+  border-bottom: 1px solid lightgray;
+  border-radius: 0px; 
+  
+  .well {
+    box-shadow: 0px;
+  }
+  
+  .label.label-info {
+    font-size: 13px;
+    text-transform: uppercase;
+    float: left;
+    margin-right: 10px;
+    border-radius: 0px;
+    width: 150px;
+    
+    b.fa {
+      float: left;
+    }
+  }
+} 
+ 
+.offer.information {
+  h5 { 
+    font-weight: bold;
+    margin-top: 2px;
+    margin-bottom: 5px;
+  }
+}
+
+.offer.startson {
+  font-size: 12px; 
+}
+
+.offer.description {
+  font-style: italic;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
 .offer.postedon {
   font-family: arial; 
-  font-size: 90%;
-  color:grey
+  font-size: 11px;
+  color:gray
 }

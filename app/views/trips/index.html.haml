@@ -1,10 +1,7 @@
 .trip-index
   %h1 join a travel
-  .row
-    .trips
-      = render @trips
-  %br
-  %br
+.container-fluid.trip
+  .row.trip
+    = render @trips
   .row.create
-    .new
-      = link_to 'Post a new travel offer', new_trip_path, class: "btn btn-info"
+    = link_to 'Post a new travel offer', new_trip_path, class: "btn btn-warning"
