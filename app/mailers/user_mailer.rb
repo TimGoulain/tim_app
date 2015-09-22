@@ -1,10 +1,15 @@
-# class UserMailer < BaseMandrillMailer
+class UserMailer < ApplicationMailer
 
-  # def recommendation(user_id)
-    # user = User.find(user_id)
+  default from: 'myaustralianbook@gmail.com'
+ 
+  def recommendation_request(recommendation)
+    mail(to: @recommendation.recipient_email, subject: 'Recommendation Request')
+  end
+    
+  # def recommendation
+    # new_job_recommendation_path(@job, token: @job.authentication_token)
     # subject = "Recommend your employee"
-    # body = mandrill_template("Recommendation", merge_vars)
-
-    # send_mail(user.email, subject, body)
+    # body = mandrill_template("Recommendation")
   # end
-# end
+    
+end

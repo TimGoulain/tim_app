@@ -51,14 +51,6 @@ class JobsController < ApplicationController
     )
   end
   
-  def request_recommendation
-    @job = Job.find(params[:id])
-    @job.authentication_token = SecureRandom.hex
-    @job.save
-    email = params[:email]
-    UserMailer.recommendation_request(@job, email).deliver
-  end
-  
   def employer_params
     params[:offer][:employer_attributes]
   end  

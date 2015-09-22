@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150920075700) do
+ActiveRecord::Schema.define(version: 20150922102418) do
 
   create_table "articles", force: true do |t|
     t.text     "text"
@@ -65,7 +65,12 @@ ActiveRecord::Schema.define(version: 20150920075700) do
   create_table "recommendations", force: true do |t|
     t.integer "note"
     t.string  "comment"
+    t.string  "recipient_email"
+    t.string  "authentication_token"
+    t.integer "job_id"
   end
+
+  add_index "recommendations", ["job_id"], name: "index_recommendations_on_job_id", using: :btree
 
   create_table "sectors", force: true do |t|
     t.string "code"

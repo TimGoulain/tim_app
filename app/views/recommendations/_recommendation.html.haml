@@ -1,0 +1,36 @@
+.col-md-8.core
+  .well.offer.core
+    .label.label-info
+      %b.fa{class: offer_image(offer)}
+      = offer.sector.code
+    .offer.information
+      %h5
+        = offer.position
+        - if offer.employer.city
+          |
+          = offer.employer.city
+        - if offer.employer.location
+          = "-"
+          = offer.employer.location
+    .offer.startson
+      - if offer.started_at 
+        Starts on #{offer.started_at.strftime("%d %B %Y")}
+      - if offer.ended_at
+        = "-"
+        Ends on #{offer.ended_at.strftime("%d %B %Y")}
+    .offer.description       
+      - if offer.description
+        = offer.description
+    .offer.postedon
+      Posted on #{offer.created_at.strftime("%d %B %Y")}  
+.col-md-4.actions
+  .offer.actions
+    = link_to offer_path(offer), class: "btn btn-danger" do
+      %b.fa.fa-thumbs-o-up
+      I'm interested!
+    - if can? :update, offer
+      = link_to edit_offer_path(offer), class: "btn btn-default" do
+        %b.fa.fa-pencil-square-o
+    - if can? :destroy, offer
+      = link_to offer, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+        %b.fa.fa-times

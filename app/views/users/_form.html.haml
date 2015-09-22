@@ -1,14 +1,5 @@
 = simple_form_for(current_user) do |f|
 
-  = f.input :name, label: "Your username", placeholder: "John Doe"
-  = f.input :email, label: "Your email address", placeholder: "john.doe@example.com"
-  = f.input :country
-  = f.input :birth, as: :string, label: "Your birthday", input_html: {class: 'birthday-picker'}
-  = f.input :phone, as: :tel, label: "Your phone number", placeholder: "+61 08 9341 6843"
-  = f.input :driving_licence, label: "Do you have a driving licence? Tick for yes!"
-  = f.input :linkedin_url, label: "Link your profile to your Linkedin account!"
-  = f.input :current_location, label: "Where are you now?", placeholder: "Example: Sydney"
-  = f.input :headline, label: "Your job title", placeholder: "Example: Barman"
-  = f.input :about_me, label: "About", placeholder: "Tell your story, where do you come from, what you are good at, what do you like, what do you intend to do in a near future etc. in a quick paragraph"
-  = f.input :skills, label: "Your skills"
-  = f.submit 'Update', class: 'btn btn-info'
+  = f.input :note
+  = f.input :comment
+  = f.submit 'Post', class: 'btn btn-info'
