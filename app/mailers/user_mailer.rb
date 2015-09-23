@@ -1,9 +1,11 @@
 class UserMailer < ApplicationMailer
 
   default from: 'myaustralianbook@gmail.com'
- 
+
   def recommendation_request(recommendation)
-    mail(to: @recommendation.recipient_email, subject: 'Recommendation Request')
+    @recommendation = recommendation
+    @job = recommendation.job
+    mail(to: recommendation.recipient_email, subject: 'Recommendation Request')
   end
     
   # def recommendation

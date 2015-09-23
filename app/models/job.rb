@@ -14,8 +14,6 @@ class Job < ActiveRecord::Base
   # Callbacks
 
   # Instance methods
-  delegate:city, to: :employer, prefix: false, allow_nil: true
-  delegate:name, to: :employer, prefix: false, allow_nil: true
-  delegate:location, to: :employer, prefix: false, allow_nil: true
-  delegate:code, to: :sector, prefix: false, allow_nil: true
+  delegate :city, :name, :location, to: :employer, prefix: false, allow_nil: true
+  delegate :code, to: :sector, prefix: false, allow_nil: true
 end

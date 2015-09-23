@@ -5,17 +5,18 @@ class Recommendation < ActiveRecord::Base
   
   after_create :set_token
   belongs_to :job
-  
+    
   # Validations
 
   # Callbacks
 
   # Instance methods
+  
+  private
+  
   def set_token
-    @recommendation.authentication_token = SecureRandom.hex
-    @recommendation.save
-    email = params[:recipient_email]
-    UserMailer.recommendation(@recommendation, email).deliver
+    self.authentication_token = SecureRandom.hex
+    self.save
   end
   
 end

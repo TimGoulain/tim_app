@@ -37,8 +37,11 @@ class Ability
     end
 
     can :manage, User
+
     
     can :manage, Job, user_id: user.id
+    
+    can :manage, Recommendation
     
     can :manage, Travel, user_id: user.id
     
