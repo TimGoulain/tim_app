@@ -2,13 +2,14 @@
 class RecommendationsController < ApplicationController
   
   def new
-    @recommendation = Recommendation.new(params[:recommendation])
+    @recommendation = Recommendation.new(params[job_id])
   end
 
   def edit
   end
 
   def create
+    
     if @recommendation.save
       redirect_to current_user, notice: 'Your recommendation request was successfully sent.'
     else

@@ -1,4 +1,4 @@
-= simple_form_for(@recommendation) do |g|
+= simple_form_for(@recommendation, :url => new_job_recommendation_path(@recommendation), :method => :create) do |g|
 
   = g.input :recipient_email
   = g.submit
