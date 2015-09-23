@@ -12,14 +12,32 @@
   }
 }
 
-.trip.location {
-  font-size: 110%;
-}
+.well.trip {
+  padding-top: 10px; 
+  padding-left: 0px;
+  padding-bottom: 5px;
+  background-color: white;
+  border: 0px;
+  border-bottom: 1px solid lightgray;
+  border-radius: 0px;
+  box-shadow: 0px;
+  
+  .label.label-success {
+    font-size: 13px;
+    text-transform: uppercase;
+    float: left;
+    margin-right: 10px;
+    border-radius: 0px;
+    min-width: 170px;
+  }
+} 
 
-h5.name {
-  font-size: 14px;
-  margin-top: 5px;
-  margin-bottom: 0px;
+.trip.core { 
+  h5 { 
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  }
 }
 
 .trip.dates {
@@ -31,14 +49,7 @@ h5.name {
 }
 
 .trip.description {
-  padding-top: 15px;
-}
-
-.trip.join {
-  padding-top: 25px;
-  font-size: 150%;
-}
-
-.trip.actions {
-  padding-top: 20px;
+  font-style: italic;
+  font-size: 12px;
+  margin-right: 10px;
 }

@@ -1,34 +1,36 @@
-.col-xs-7
-  .trip.description
-    .trip.location
-      .label.label-warning= trip.departure_point
-      .fa.fa-share
-      .label.label-warning= trip.arrival_point
+.col-md-8
+  .well.trip
+    .label.label-success
+      = trip.departure_point
+      %b.fa.fa-long-arrow-right
+      = trip.arrival_point
     .trip.core
-      %h5.name
-        = trip.name
+      %h5
+        - if trip.first_name
+          |
+          Posted by
+          = trip.first_name
         - if trip.cotraveller.present?
-          | with
+          = "- with"
           = trip.cotraveller    
     .trip.dates
       - if trip.started_at
         Departure on 
         #{trip.started_at.strftime("%d %B %Y")}
-        |
       - if trip.ended_at
-        Arrival on 
+        | Arrival on 
         #{trip.ended_at.strftime("%d %B %Y")}
       - if trip.flexible_date.present?
-        (the arrival date is flexible!)
-      = trip.phone
+        = "- The arrival date is flexible!"
+    .trip.description
+      - if trip.name 
+        = trip.name
 
-.col-xs-3
+.col-md-4.trips.actions
   .trip.join
     = link_to trip_path(trip), class: "btn btn-danger" do
+      %b.fa.fa-thumbs-o-up
       I want to join!
-
-.col-xs-2    
-  .trip.actions
     - if can? :update, trip
       = link_to edit_trip_path(trip), class: "btn btn-default" do
         %b.fa.fa-pencil-square-o
