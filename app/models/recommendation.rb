@@ -15,7 +15,7 @@ class Recommendation < ActiveRecord::Base
     @recommendation.authentication_token = SecureRandom.hex
     @recommendation.save
     email = params[:recipient_email]
-    UserMailer.recommendation_request(@recommendation, email).deliver_now
+    UserMailer.recommendation(@recommendation, email).deliver
   end
   
 end

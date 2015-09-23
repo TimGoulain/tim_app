@@ -1,9 +1,4 @@
 = simple_form_for(@recommendation) do |f|
- = f.error_notification
-
- .form-inputs
-    = f.input :note
-    = f.input :comment
-
-  .form-actions
-    = f.button :submit
+  = f.input :note
+  = f.input :comment
+  = f.button :submit

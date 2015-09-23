@@ -52,7 +52,7 @@ class JobsController < ApplicationController
   end
   
   def employer_params
-    params[:offer][:employer_attributes]
+    params[:job][:employer_attributes]
   end  
   
 end
