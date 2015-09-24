@@ -30,6 +30,7 @@ gem 'delayed_job_active_record'
 gem 'country_select'
 gem 'bootstrap-datepicker-rails'
 gem 'mandrill-api'
+gem 'mailgun_rails'
 
 group :development, :test do
   gem 'mysql2'

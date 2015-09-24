@@ -13,21 +13,17 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send --> modified following https://rubyonrailshelp.wordpress.com/2014/01/02/setting-up-mailer-using-devise-for-forgot-password/.
+  # Don't care if the mailer can't send 
   config.action_mailer.raise_delivery_errors = true
 
   #Added following method Forgot your Password? see link above
-  # config.action_mailer.delivery_method = :smtp
   
-  # config.action_mailer.smtp_settings = {
-    # address: ENV['SMTP_ADDRESS'],
-    # authentication: :plain,
-    # domain: ENV['SMTP_DOMAIN'],
-    # enable_starttls_auto: true,
-    # password: ENV['SMTP_PASSWORD'],
-    # port: '587',
-    # user_name: ENV['STMP_USERNAME']
-  # }
+  config.action_mailer.delivery_method = :mailgun
+  
+  config.action_mailer.mailgun_settings = {
+    api_key: 'key-ce32ea340c91b0afead53d62c0e8f728',
+    domain: 'sandboxd4d0b32c36804a6cb0b3a18d23319f80.mailgun.org'
+  }
   
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -56,4 +52,4 @@ Rails.application.configure do
   #Paperclip
   Paperclip.options[:command_path] = "/usr/bin/"
   
-  end
+end

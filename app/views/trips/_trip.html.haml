@@ -1,13 +1,12 @@
 .col-md-8
   .well.trip
-    .label.label-success
+    .label.label-warning
       = trip.departure_point
       %b.fa.fa-long-arrow-right
       = trip.arrival_point
     .trip.core
       %h5
         - if trip.first_name
-          |
           Posted by
           = trip.first_name
         - if trip.cotraveller.present?

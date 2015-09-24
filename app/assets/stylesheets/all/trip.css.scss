@@ -22,7 +22,7 @@
   border-radius: 0px;
   box-shadow: 0px;
   
-  .label.label-success {
+  .label.label-warning {
     font-size: 13px;
     text-transform: uppercase;
     float: left;
@@ -52,4 +52,8 @@
   font-style: italic;
   font-size: 12px;
   margin-right: 10px;
+}
+
+.col-md-4.trips.actions { 
+  padding-top: 10px; 
 }

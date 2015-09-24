@@ -16,4 +16,4 @@
 /tmp
 
 # Ignore local_env
-/config/local_env.yml
+.env

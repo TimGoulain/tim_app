@@ -38,9 +38,13 @@
   
     .well.skills
       .label.label-default= "skills"
-      %br
-      .skills.content
+      %br  
+      - if @user.skills
         = @user.skills
+      - else
+        = link_to profile_edit_path, class: "btn btn-default" do
+          %b.fa.fa-pencil-square-o
+          Add a skill
     
     .well.languages
       .label.label-default= "Languages"  
