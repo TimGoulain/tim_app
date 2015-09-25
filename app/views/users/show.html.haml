@@ -2,61 +2,68 @@
 
 .leftpart  
   .col-sm-4
-    .well.picture
-      Blabla
-    .well.information
-      .label.label-default= "main information"  
-      .job.information
-        .birth
-          - if @user.birth
-            Born on
-            #{@user.birth.strftime("%d %B %Y")}
-        .user.location
-          %b.fa.fa-map-marker
-          - if @user.current_location.blank?
-            On the road
+    .well.leftinformation
+      .well.picture
+        - if @user.avatar
+          .user.image
+            = image_tag @user.avatar.url(:square), :size => '150x150'
+        - else 
+          = "Click here to add a picture"
+    
+      .well.information
+        .label.label-default= "main information"  
+        .job.information
+          .birth
+            - if @user.birth
+              Born on
+              #{@user.birth.strftime("%d %B %Y")}
+          .user.location
+            %b.fa.fa-map-marker
+            - if @user.current_location.blank?
+              On the road
+            - else
+              = @user.current_location
+          .user.email
+            - if @user.email
+              %b.fa.fa-envelope
+              = @user.email    
+          .user.phone
+            - if @user.phone
+              %b.fa.fa-phone
+              = @user.phone
+          .user.driving
+          - if @user.driving_licence
+            %b.fa.fa-car
+            Driving Licence 
+    
+      .well.sectors
+        .label.label-default= "sectors"  
+        %br
+        .sectors.content
+          Blabla
+    
+      .well.skills
+        .label.label-default= "skills"
+        %br  
+        .skills.content
+          - if @user.skills
+            = @user.skills
           - else
-            = @user.current_location
-        .user.email
-          - if @user.email
-            %b.fa.fa-envelope
-            = @user.email    
-        .user.phone
-          - if @user.phone
-            %b.fa.fa-phone
-            = @user.phone
-        .user.driving
-        - if @user.driving_licence
-          %b.fa.fa-car
-          Driving Licence 
-  
-    .well.sectors
-      .label.label-default= "sectors"  
-      %br
-      .sectors.content
-        Blabla
-  
-    .well.skills
-      .label.label-default= "skills"
-      %br  
-      - if @user.skills
-        = @user.skills
-      - else
-        = link_to profile_edit_path, class: "btn btn-default" do
-          %b.fa.fa-pencil-square-o
-          Add a skill
-    
-    .well.languages
-      .label.label-default= "Languages"  
-      %br
-      .languages.content
-        Languages
-    
-    .well.computer
-      .label.label-default= "computer skills"  
-      %br
-      .computer.content
-        Computer skills
+            = link_to profile_edit_path, class: "btn btn-default" do
+              %b.fa.fa-pencil-square-o
+              Add a skill
+      
+      .well.languages
+        .label.label-default= "Languages"  
+        %br
+        .languages.content
+          Languages
+      
+      .well.computer
+        .label.label-default= "computer skills"  
+        %br
+        .computer.content
+          Computer skills
 
 .rightpart  
   .col-sm-8
@@ -89,10 +96,10 @@
             = link_to 'Add a travel', new_travel_path, class: "btn btn-warning"
       %br
       .row.jobs
-        = render @user.jobs 
+        = render @user.jobs.reverse
       %br
       .row.travels
-        = render @user.travels 
+        = render @user.travels.reverse
   
       .row.back
         = link_to 'Back', travels_path, class: "btn btn-default"

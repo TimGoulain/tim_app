@@ -1,5 +1,33 @@
-= simple_form_for(current_user) do |f|
+= simple_form_for(current_user, multipart: true) do |f|
 
-  = f.input :note
-  = f.input :comment
-  = f.submit 'Post', class: 'btn btn-info'
+  .col-md-4
+    .edit.main.information
+      = "Main Information"
+    %br
+    .edit.avatar
+      = "Upload a profile picture"
+      = f.file_field :avatar
+    %br
+    .edit.form.information
+    = f.input :name, label: "First Name and Last Name", placeholder: "Ex: John Doe"
+    = f.input :email, label: "Email address", placeholder: "Ex: john.doe@example.com"
+    = f.input :phone, as: :tel, label: "Phone number", placeholder: "+61 08 9341 6843"
+    = f.input :birth, as: :string, label: "Date of birth", input_html: {class: 'birthday-picker'}
+    = f.input :country, label: "Country of origin"
+    = f.input :current_location, label: "Current location", placeholder: "Ex: Sydney"
+    = f.input :driving_licence, label: "Do you have a driving licence? Tick for yes!"
+  
+  .col-md-8
+    .edit.form.aboutme
+      = f.input :headline, label: "Main job title", placeholder: "Ex: Barman"
+      = f.input :about_me, label: "About - Profile description", placeholder: "Ex: Holding a Working-Holiday Visa, I am looking for job opportunities around Australia. I am a dynamic, motivated and fast-learning person with good communication and presentation skills etc."
+      = f.input :sector, label: "Prefered sectors of activity", placeholder: "Ex: Hotel, restaurants"
+      = f.input :skills, label: "Skills"
+      = f.input :computer_skills
+      = f.input :languages
+      = f.input :linkedin_url, label: "Link your profile to your Linkedin account!"
+  
+    .edit.form.actions
+      = f.submit 'Update', class: 'btn btn-info'
+      %br
+

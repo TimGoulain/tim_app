@@ -1,7 +1,6 @@
-%h1 Create your profile
-
+.edit.user
+	%h1 Your profile
+	
 = render 'form'
-
-%br
-= link_to "See my profile", @user, class: 'btn btn-default' 
-= link_to "Back", users_path, class: 'btn btn-default'
+= link_to "See my profile", user_path(current_user), class: 'btn btn-default' 
+= link_to "Back", root_path, class: 'btn btn-default'

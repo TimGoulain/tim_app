@@ -12,6 +12,11 @@ class User < ActiveRecord::Base
   belongs_to :employer
   has_many :offers, foreign_key: "created_by_id"
   has_many :trips
+  has_attached_file :avatar, styles: { 
+    thumb: '100x100>', 
+    square: '200x200#', 
+    medium: '300x300>' 
+  }
   
   # Validations
 
@@ -19,7 +24,9 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 255 },
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
-
+  
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  
   # Callbacks
   before_create :set_user_name
   
@@ -28,7 +35,7 @@ class User < ActiveRecord::Base
   def to_s
     name
   end
-  
+    
   protected
   
   def set_user_name
@@ -36,5 +43,5 @@ class User < ActiveRecord::Base
       self.name = email.split('@').first.capitalize
     end
   end
-   
+ 
 end

@@ -3,6 +3,6 @@
   
 .container-fluid.offers
   .row.offer
-    = render @offers
+    = render @offers.reverse
   .row.newoffer
     = link_to 'Post a new job', new_offer_path, class: "btn btn-info"

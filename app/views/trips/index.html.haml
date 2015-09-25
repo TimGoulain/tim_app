@@ -2,6 +2,6 @@
   %h1 join a travel
 .container-fluid.trip
   .row.trip
-    = render @trips
+    = render @trips.reverse
   .row.create
     = link_to 'Post a new travel offer', new_trip_path, class: "btn btn-warning"

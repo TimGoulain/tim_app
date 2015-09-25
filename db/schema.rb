@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922102418) do
+ActiveRecord::Schema.define(version: 20150925160906) do
 
   create_table "articles", force: true do |t|
     t.text     "text"
@@ -134,6 +134,13 @@ ActiveRecord::Schema.define(version: 20150922102418) do
     t.text     "skills"
     t.integer  "employer_id"
     t.boolean  "admin",                              default: false, null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "sector"
+    t.string   "languages"
+    t.string   "computer_skills"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
