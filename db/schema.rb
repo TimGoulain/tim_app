@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925160906) do
+ActiveRecord::Schema.define(version: 20150926100058) do
 
   create_table "articles", force: true do |t|
     t.text     "text"
@@ -61,6 +61,17 @@ ActiveRecord::Schema.define(version: 20150925160906) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "ratings", force: true do |t|
+    t.integer  "recommendation_id"
+    t.integer  "job_id"
+    t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ratings", ["job_id"], name: "index_ratings_on_job_id", using: :btree
+  add_index "ratings", ["recommendation_id"], name: "index_ratings_on_recommendation_id", using: :btree
 
   create_table "recommendations", force: true do |t|
     t.integer "note"

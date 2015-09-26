@@ -1,4 +1,7 @@
 = simple_form_for(@recommendation) do |f|
-  = f.input :note
   = f.input :comment
+  
+  = f.simple_fields_for :rating do |r|
+    = r.input :score, :input_html => { :id => 'recommendation_star' }
+  
   = f.button :submit

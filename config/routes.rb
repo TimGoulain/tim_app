@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :offers
   resources :travels
   resources :trips
+  resources :ratings, only: :update
   
   devise_for :users
   devise_scope :user do

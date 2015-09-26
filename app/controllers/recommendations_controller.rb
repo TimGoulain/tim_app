@@ -7,6 +7,13 @@ class RecommendationsController < ApplicationController
   def new
   end 
   
+  def show
+    @rating = Rating.where(comment_id: @comment.id).first
+    unless @rating
+      @rating = Rating.create(comment_id: @comment.id, score: 0)
+    end
+  end
+  
   def edit
   end
 

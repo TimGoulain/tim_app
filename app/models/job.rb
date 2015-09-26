@@ -7,6 +7,7 @@ class Job < ActiveRecord::Base
   belongs_to :employer
   belongs_to :sector
   has_many :recommendations
+  has_many :ratings
   accepts_nested_attributes_for :employer
 
   # Validations
