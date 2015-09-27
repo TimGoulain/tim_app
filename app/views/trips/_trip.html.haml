@@ -27,9 +27,14 @@
 
 .col-md-4.trips.actions
   .trip.join
-    = link_to trip_path(trip), class: "btn btn-danger" do
-      %b.fa.fa-thumbs-o-up
-      I want to join!
+    - if can? :read, trip
+      = link_to trip_path(trip), class: "btn btn-danger" do
+        %b.fa.fa-thumbs-o-up
+        I want to join!
+    - else 
+      = link_to new_user_registration_path, class: "btn btn-danger" do
+        %b.fa.fa-thumbs-o-up
+        I want to join!
     - if can? :update, trip
       = link_to edit_trip_path(trip), class: "btn btn-default" do
         %b.fa.fa-pencil-square-o

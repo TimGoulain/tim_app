@@ -25,9 +25,14 @@
       Posted on #{offer.created_at.strftime("%d %B %Y")}  
 .col-md-4.actions
   .offer.actions
-    = link_to offer_path(offer), class: "btn btn-danger" do
-      %b.fa.fa-thumbs-o-up
-      I'm interested!
+    - if can? :read, offer
+      = link_to offer_path(offer), class: "btn btn-danger" do
+        %b.fa.fa-thumbs-o-up
+        I'm interested!
+    - else 
+      = link_to new_user_registration_path, class: "btn btn-danger" do
+        %b.fa.fa-thumbs-o-up
+        I'm interested!
     - if can? :update, offer
       = link_to edit_offer_path(offer), class: "btn btn-default" do
         %b.fa.fa-pencil-square-o
