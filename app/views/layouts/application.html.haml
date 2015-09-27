@@ -5,7 +5,10 @@
     .wrapper
       .header
         %before
-        = render 'layouts/header'
+        - if current_page?(root_path)
+          = render 'layouts/home_header'
+        - else 
+          = render 'layouts/header'
         %after
         = render 'layouts/navbar_admin' if user_signed_in? && current_user.admin?
       = render 'layouts/navbar'

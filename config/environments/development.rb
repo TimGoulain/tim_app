@@ -21,8 +21,8 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :mailgun
   
   config.action_mailer.mailgun_settings = {
-    api_key: 'key-ce32ea340c91b0afead53d62c0e8f728',
-    domain: 'sandboxd4d0b32c36804a6cb0b3a18d23319f80.mailgun.org'
+    api_key: ENV['MAILGUN_API_KEY'],
+    domain: ENV['MAILGUN_DOMAIN']
   }
   
   # Print deprecation notices to the Rails logger.
@@ -44,7 +44,7 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  config.action_mailer.default_url_options = { host: "localhost:3000" }
+  config.action_mailer.default_url_options = { host: 'localhost' }
   
   # Disable logging
   config.logger = ActiveSupport::Logger.new(nil)
