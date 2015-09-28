@@ -14,23 +14,3 @@ $(function () {
 
   $('.date-picker').datepicker();
 });
-
-  // Star rating
-
-$('#star').raty({
-  readOnly: true,
-  score: <%= @recommendation.average_rating %>,
-  path: '/assets'
-});
-
-$('#recommendation_star').raty({
-  score: <%= @rating.score %>,
-  path: '/assets',
-  click: function(score, evt) {
-    $.ajax({
-      url: '/ratings/' + <%= @rating.id %>,
-      type: 'PATCH',
-      data: { score: score }
-    });
-  }
-});

@@ -17,3 +17,6 @@
 
 # Ignore local_env
 .env
+
+# Ignore public
+/public/assets

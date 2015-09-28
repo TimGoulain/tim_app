@@ -1,7 +1,8 @@
 %h1 Your recommendation
 
 .col-md-9
-  = opinion.note
+  - 5.times do |i|
+    %i.fa{class: "fa-star#{'-o' if i+1 > opinion.note}"}
   = opinion.comment
   
 .col-md-3

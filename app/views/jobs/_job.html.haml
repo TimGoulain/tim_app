@@ -30,5 +30,5 @@
           = link_to edit_job_path(job), class: "btn btn-default" do
             %b.fa.fa-pencil-square-o   
         - if can? :destroy, job
-          = link_to job, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+          = link_to job, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" do
             %b.fa.fa-times
