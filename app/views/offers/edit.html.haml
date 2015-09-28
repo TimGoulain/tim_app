@@ -1,7 +1,8 @@
-%h1 Editing offer
+.offer-new
+  %h1 Editing offer
 
-= render 'form'
-
-= link_to 'Show', @offer
-\|
-= link_to 'Back', offers_path
+  = render 'form'
+  %br
+  %br
+  = link_to 'Show', @offer, class: "btn btn-default"
+  = link_to 'Back', offers_path, class: "btn btn-default"

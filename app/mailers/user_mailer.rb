@@ -8,6 +8,12 @@ class UserMailer < ApplicationMailer
     mail(to: recommendation.recipient_email, subject: 'Recommendation Request')
   end
     
+  def opinion_request(opinion)
+    @opinion = opinion
+    @travel = opinion.travel
+    mail(to: opinion.recipient_email, subject: 'Recommendation Request')
+  end
+    
   # def recommendation
     # new_job_recommendation_path(@job, token: @job.authentication_token)
     # subject = "Recommend your employee"

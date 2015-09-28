@@ -4,6 +4,7 @@ class Travel < ActiveRecord::Base
   # Associations
  
   belongs_to :user 
+  has_many :opinions
   
   # Validations
 

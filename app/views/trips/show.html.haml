@@ -1,6 +1,51 @@
-%h1 Ask the organizer to join the trip ! 
-
-= @trip.email
-
-
-= link_to 'Back', trips_path, class: "btn btn-default"
+%jumbotron  
+  .trip-show
+    %h1 Get on !
+    
+    .well.show-trip
+      .trip-travellers
+        %h4= "travellers"
+        = @trip.user.name
+        - if @trip.cotraveller
+          with
+          = @trip.cotraveller
+      .trip-description
+        %h4= "description"
+        = @trip.name      
+      .locations_and_date.information
+        .locations_and_date.title
+          %h4= "trip details"
+          %b.fa.fa-map-marker
+          This trip goes from
+          = @trip.departure_point
+          to
+          = @trip.arrival_point
+          %br
+          - if @trip.started_at
+            %b.fa.fa-calendar
+            We will leave on
+            #{@trip.started_at.strftime("%d %B %Y")}
+            %br
+          - if @trip.ended_at
+            %b.fa.fa-calendar
+            We will arrive on 
+            #{@trip.ended_at.strftime("%d %B %Y")}
+          - if @trip.flexible_date.present?
+            = "We are flexible on the dates, contact us to know more!"
+      .contact_information
+        %h4= "contact details"
+        - if @trip.phone
+          %b.fa.fa-phone
+          \|
+          = @trip.phone
+        %br
+        - if @trip.email
+          %b.fa.fa-envelope-o
+          \|
+          = @trip.email
+    
+    .trip-actions
+      - if can? :update, @trip
+        = link_to edit_trip_path(@trip), class: "btn btn-default" do
+          %b.fa.fa-pencil-square-o
+      = link_to 'Back', trips_path, class: "btn btn-default"

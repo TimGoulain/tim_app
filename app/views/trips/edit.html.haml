@@ -1,7 +1,9 @@
-%h1 Editing offer
-
-= render 'form'
-
-= link_to 'Show', @trip
-\|
-= link_to 'Back', trips_path
+.trip-new
+  %h1 Editing offer
+  
+  = render 'form'
+  
+  %br
+  %br
+  = link_to 'Show', @trip, class: "btn btn-default"
+  = link_to 'Back', trips_path, class: "btn btn-default"

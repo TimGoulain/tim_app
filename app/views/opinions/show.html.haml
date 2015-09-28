@@ -1,0 +1,11 @@
+%h1 Your recommendation
+
+.col-md-9
+  = opinion.note
+  = opinion.comment
+  
+.col-md-3
+  - if can? :destroy, @opinion
+    = link_to @opinion, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+      %b.fa.fa-times
+  = link_to 'Back', user_path(user), class: "btn btn-default"

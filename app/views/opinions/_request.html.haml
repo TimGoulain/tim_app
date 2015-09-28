@@ -1,0 +1,4 @@
+= simple_form_for([@travel, @opinion]) do |g|
+
+  = g.input :recipient_email, label: "Fill in the email address of a former cotraveller", placeholder: "Ex:bobby@example.com"
+  = g.submit "Send your recommendation request", class: 'btn btn-default'

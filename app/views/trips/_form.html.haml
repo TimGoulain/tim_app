@@ -1,17 +1,24 @@
-= simple_form_for(@trip) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :name, label: "Name of your trip", placeholder: "Give a name to your trip, ex: Cool trip in a van with nice people"
-    = f.input :first_name, label: "Your name", placeholder: "ex: Timmy"
-    = f.input :departure_point, label: "City or place of departure", placeholder: "ex: Perth"
-    = f.input :arrival_point, label: "City or place of arrival", placeholder: "ex: Broome"
-    = f.input :started_at, as: :string, input_html: {class: 'date-picker'}
-    = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
-    = f.input :flexible_date, label: "Are these dates flexible?"
-    = f.input :cotraveller
-    = f.input :phone, as: :tel, label: "Your phone number"
-    = f.input :email, placeholder: "To avoid spams, use the model youremail[@]adress.com"
-      
-  .form-actions
-    = f.button :submit
+.trip-new
+  = simple_form_for(@trip) do |f|
+    = f.error_notification
+  
+    .row
+      .col-md-6
+        .information-travellers
+          %h4= "About the travellers"
+          = f.input :first_name, label: "Your name", placeholder: "Ex: John"
+          = f.input :cotraveller, label: "Travelling mates", placeholder: "Ex: Ben and Dean"
+          = f.input :phone, as: :tel, label: "Phone number"
+          = f.input :email, placeholder: "Ex: johndoe@example.com"
+      .col-md-6
+        .information-trip
+          %h4= "About the trip"
+          = f.input :departure_point, label: "City or place of departure", placeholder: "ex: Perth"
+          = f.input :arrival_point, label: "City or place of arrival", placeholder: "ex: Broome"
+          = f.input :name, label: "Description", placeholder: "Shortly describe your trip, give the transport means you'll use and so on, ex: Cool trip in a van with nice people"
+          = f.input :started_at, as: :string, input_html: {class: 'date-picker'}
+          = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
+          = f.input :flexible_date, label: "Are these dates flexible?"
+    .row    
+      .form-actions
+        = f.button :submit, class: "btn btn-warning"

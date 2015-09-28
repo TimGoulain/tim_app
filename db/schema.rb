@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926100058) do
+ActiveRecord::Schema.define(version: 20150928145314) do
 
   create_table "articles", force: true do |t|
     t.text     "text"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150926100058) do
     t.string "name"
     t.string "location"
     t.string "city"
+    t.string "contact_point"
   end
 
   create_table "jobs", force: true do |t|
@@ -56,6 +57,16 @@ ActiveRecord::Schema.define(version: 20150926100058) do
   add_index "offers", ["created_by_id"], name: "index_offers_on_created_by_id", using: :btree
   add_index "offers", ["employer_id"], name: "index_offers_on_employer_id", using: :btree
   add_index "offers", ["sector_id"], name: "index_offers_on_sector_id", using: :btree
+
+  create_table "opinions", force: true do |t|
+    t.integer "note"
+    t.string  "comment"
+    t.string  "recipient_email"
+    t.string  "authentication_token"
+    t.integer "travel_id"
+  end
+
+  add_index "opinions", ["travel_id"], name: "index_opinions_on_travel_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.datetime "created_at"

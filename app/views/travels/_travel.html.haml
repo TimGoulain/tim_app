@@ -22,15 +22,16 @@
         .travel.description  
           = travel.memory
   
-  .col-xs-2
-    .recommendation
-      Future link to ask for a comment
-  
-  .col-xs-2
-    .actions
-      - if can? :edit, travel
-        = link_to edit_travel_path(travel), class: "btn btn-default" do
-          %b.fa.fa-pencil-square-o   
-      - if can? :destroy, travel
-        = link_to travel, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
-          %b.fa.fa-times
+  .col-xs-4
+    .row.recommendation
+      = link_to new_travel_opinion_path(travel), class: "btn btn-default" do
+        %b.fa.fa-envelope-o 
+        Ask for a recommendation
+    .row.actions
+      .travel.actions
+        - if can? :edit, travel
+          = link_to edit_travel_path(travel), class: "btn btn-default" do
+            %b.fa.fa-pencil-square-o   
+        - if can? :destroy, travel
+          = link_to travel, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+            %b.fa.fa-times

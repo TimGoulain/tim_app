@@ -1,20 +1,25 @@
-= simple_form_for(@offer) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :position, placeholder: "The position offered, ex: barman"
+.offer-new
+  = simple_form_for(@offer) do |f|
+    = f.error_notification
     
-    = f.simple_fields_for :employer do |g|
-      = g.input :name
-      = g.input :city
-      = g.select :location, States_and_Territories: [ 'Ashmore and Cartier Islands', 'Australian Antarctic Territory', 'Australian Capital Territory', 'Christmas Island', 'Cocos (Keeling) Islands', 'Coral Sea Islands', 'Heard Island and McDonald Islands', 'Jervis Bay Territory', 'New South Wales', 'Norfolk Island', 'Northern Territory', 'Queensland', 'South Australia', 'Tasmania', 'Victoria', 'Western Australia' ]
-      = g.simple_fields_for :contacts do |e|
-        = e.input :email
-        = e.input :phone, as: :tel
-    = f.input :description
-    = f.input :started_at, as: :string, input_html: {class: 'date-picker'}
-    = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
-    = f.association :sector
-
-  .form-actions
-    = f.button :submit
+    .row
+      .col-md-6
+        .information-offer
+          %h4= "About the job"
+          = f.input :position, placeholder: "Ex: Barman"
+          = f.input :description
+          = f.input :started_at, as: :string, input_html: {class: 'date-picker'}
+          = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
+          = f.association :sector
+      .col-md-6  
+        .information-employer 
+          %h4= "About the employer"
+          = f.simple_fields_for :employer do |g|
+            = g.input :name, label: "Name of the company", placeholder: "Ex: The Blue Velvet"
+            = g.input :city
+            = g.select :location, States_and_Territories: [ 'Ashmore and Cartier Islands', 'Australian Antarctic Territory', 'Australian Capital Territory', 'Christmas Island', 'Cocos (Keeling) Islands', 'Coral Sea Islands', 'Heard Island and McDonald Islands', 'Jervis Bay Territory', 'New South Wales', 'Norfolk Island', 'Northern Territory', 'Queensland', 'South Australia', 'Tasmania', 'Victoria', 'Western Australia' ]
+            %br
+            = g.input :contact_point
+    .row
+      .offer-form-actions
+        = f.button :submit, class: "btn btn-info"

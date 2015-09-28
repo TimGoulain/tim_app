@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :offers
-  resources :travels
+  resources :travels, except: [:index] do
+    resources :opinions, except: [:index]
+  end
   resources :trips
   resources :ratings, only: :update
   
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
   resources :ideas
   resources :articles
   resources :users, only: [:index, :show, :update]
-  resources :jobs, except: [:index, :show] do
+  resources :jobs, except: [:index] do
     resources :recommendations, except: [:index]
   end
   resources :sectors

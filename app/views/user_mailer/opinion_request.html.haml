@@ -1,0 +1,5 @@
+%h5 Recommendation request
+
+%p A former cotraveller of yours asked for your recommendation!
+  
+%p= link_to "Click here to post a recommendation", edit_travel_opinion_path(@travel, @opinion, token: @opinion.authentication_token), class: "btn btn-default"

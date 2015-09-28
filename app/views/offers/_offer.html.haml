@@ -2,16 +2,16 @@
   .well.offer.core
     .label.label-info
       %b.fa{class: offer_image(offer)}
-      = offer.sector.code
+      = offer.code
     .offer.information
       %h5
         = offer.position
-        - if offer.employer.city
+        - if offer.city
           |
-          = offer.employer.city
-        - if offer.employer.location
+          = offer.city
+        - if offer.location
           = "-"
-          = offer.employer.location
+          = offer.location
     .offer.startson
       - if offer.started_at 
         Starts on #{offer.started_at.strftime("%d %B %Y")}
