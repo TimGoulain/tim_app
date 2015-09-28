@@ -11,4 +11,6 @@ class Travel < ActiveRecord::Base
   # Callbacks
 
   # Instance methods
+  delegate :note, :comment, to: :opinion, prefix: false, allow_nil: true
+  
 end

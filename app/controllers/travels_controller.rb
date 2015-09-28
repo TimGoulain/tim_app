@@ -39,7 +39,16 @@ class TravelsController < ApplicationController
   private
 
   def travel_params
-    params.require(:travel).permit(:visit, :departure_point, :arrival_point, :started_at, :ended_at, :cotraveller, :memory)
+    params.require(:travel).permit(
+      :visit, :departure_point, :arrival_point, :started_at, :ended_at, :cotraveller, :memory,
+      opinion_attributes: [
+        :note, :comment
+      ]
+    )
   end
-
+  
+  def opinion_params
+    params[:travel][:opinion_attributes]
+  end
+    
 end

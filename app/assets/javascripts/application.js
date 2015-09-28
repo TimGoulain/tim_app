@@ -18,4 +18,5 @@
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.en-GB.js
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
+//= require_tree ./vendor
 //= require_tree .
