@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     resources :opinions, except: [:index]
   end
   resources :trips
-  resources :ratings, only: :update
   
   devise_for :users
   devise_scope :user do
