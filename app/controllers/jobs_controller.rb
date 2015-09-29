@@ -60,5 +60,5 @@ class JobsController < ApplicationController
   
   def opinion_params
     params[:job][:recommendation_attributes]
-  
+  end
 end
