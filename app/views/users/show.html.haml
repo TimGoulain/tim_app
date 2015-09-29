@@ -40,7 +40,13 @@
         .label.label-default= "sectors"  
         %br
         .sectors.content
-          Blabla
+          - if @user.sector
+            = @user.sector
+          - else
+            - if can? :edit, @user
+              = link_to profile_edit_path, class: "btn btn-default" do
+                %b.fa.fa-pencil-square-o
+                Add sectors
     
       .well.skills
         .label.label-default= "skills"
@@ -49,21 +55,34 @@
           - if @user.skills
             = @user.skills
           - else
-            = link_to profile_edit_path, class: "btn btn-default" do
-              %b.fa.fa-pencil-square-o
-              Add a skill
+            - if can? :edit, @user
+              = link_to profile_edit_path, class: "btn btn-default" do
+                %b.fa.fa-pencil-square-o
+                Add skills
       
       .well.languages
         .label.label-default= "Languages"  
         %br
         .languages.content
-          Languages
+          - if @user.languages
+            = @user.languages
+          - else
+            - if can? :edit, @user
+              = link_to profile_edit_path, class: "btn btn-default" do
+                %b.fa.fa-pencil-square-o
+                Add languages
       
       .well.computer
         .label.label-default= "computer skills"  
         %br
         .computer.content
-          Computer skills
+          - if @user.computer_skills
+            = @user.computer_skills
+          - else
+            - if can? :edit, @user
+              = link_to profile_edit_path, class: "btn btn-default" do
+                %b.fa.fa-pencil-square-o
+                Add computer skills
 
 .rightpart  
   .col-sm-8

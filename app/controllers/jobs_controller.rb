@@ -47,6 +47,9 @@ class JobsController < ApplicationController
       :position, :description, :started_at, :ended_at, :employer_id, :sector_id,
       employer_attributes: [
         :id, :name, :location, :city
+      ],
+      recommendation_attributes: [
+        :note, :comment
       ]
     )
   end
@@ -54,5 +57,8 @@ class JobsController < ApplicationController
   def employer_params
     params[:job][:employer_attributes]
   end  
+  
+  def opinion_params
+    params[:job][:recommendation_attributes]
   
 end

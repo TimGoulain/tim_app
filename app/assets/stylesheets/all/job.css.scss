@@ -18,6 +18,7 @@
  
 .job.name {
   text-transform: uppercase;
+  font-weight: bold;
 }
   
 .job.else {
@@ -44,4 +45,20 @@
 
 .job.actions {
   padding: 10px;
+}
+
+/* Recommendation */
+
+.job.recommendation {
+  border-top: 1px solid gray;
+  margin-top: 5px;
+  padding-top: 5px;
+  
+  .fa-star {
+    color: rgb(252, 184, 20);
+  }  
+  
+  .fa-star-o {
+    color: gray;
+  }
 }

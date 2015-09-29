@@ -1,5 +1,5 @@
 = simple_form_for(@recommendation) do |f|
   = f.input :comment
-  = f.input :note
+  = f.input :note, input_html: {type: 'number', class: 'rating'}
   
   = f.button :submit

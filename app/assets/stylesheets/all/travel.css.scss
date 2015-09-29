@@ -17,6 +17,7 @@
 }
 .travel.header {
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .travel.else {
@@ -41,3 +42,18 @@
   padding-top: 1px;
 }
 
+/* Opinion */
+
+.travel.opinion {
+  border-top: 1px solid gray;
+  margin-top: 5px;
+  padding-top: 5px;
+  
+  .fa-star {
+    color: rgb(252, 184, 20);
+  }  
+  
+  .fa-star-o {
+    color: gray;
+  }
+}

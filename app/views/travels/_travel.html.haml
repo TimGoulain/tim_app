@@ -23,15 +23,20 @@
           = travel.memory
         - travel.opinions.each do |opinion|
           .travel.opinion
-            = opinion.comment
-            - 5.times do |i|
-              %i.fa{class: "fa-star#{'-o' if i+1 > opinion.note}"}
+            - if opinion.comment
+              %b.fa.fa-comment-o
+              = opinion.comment
+              %br
+            - if opinion.note
+              - 5.times do |i|
+                %i.fa{class: "fa-star#{'-o' if i+1 > opinion.note}"}
   
   .col-xs-4
-    .row.recommendation
-      = link_to new_travel_opinion_path(travel), class: "btn btn-default" do
-        %b.fa.fa-envelope-o 
-        Ask for a recommendation
+    - if can? :edit, travel
+      .row.recommendation
+        = link_to new_travel_opinion_path(travel), class: "btn btn-default" do
+          %b.fa.fa-envelope-o 
+          Ask for a recommendation
     .row.actions
       .travel.actions
         - if can? :edit, travel
