@@ -13,4 +13,12 @@ class Offer < ActiveRecord::Base
   delegate :city, :name, :location, :contact_point, to: :employer, prefix: false, allow_nil: true
   delegate :code, to: :sector, prefix: false, allow_nil: true
 
+  def self.search(search)
+    if search
+      find(:all, conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
 end

@@ -2,8 +2,15 @@
 
 .offer-index
   %h1 find a job
-  
+ 
 .container-fluid.offers
+  .row.search
+    = form_tag(offers_path, method: 'get', id: "search-form") do
+      = text_field_tag :search, params[:search], placeholder: "Search"
+      = submit_tag "Search", class: "btn btn-default", :name => nil
+      - if !@offers.present? 
+        = "There are no offer for you yet" #{params[:search}
+  %br 
   .row.offer
     = render @offers.reverse
   .row.newoffer
