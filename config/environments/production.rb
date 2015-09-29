@@ -83,15 +83,12 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
   # config.action_mailer.default :charset => "utf-8"
 
-  # config.action_mailer.smtp_settings = {
-    # address: "smtp.mandrillapp.com",
-    # port: 587,
-    # domain: heroku.com,
-    # authentication: "plain",
-    # enable_starttls_auto: true,
-    # user_name: ENV["SMTP_USERNAME"],
-    # password: ENV["SMTP_PASSWORD"]
-  # }
+  config.action_mailer.delivery_method = :mailgun
+  
+  config.action_mailer.mailgun_settings = {
+    api_key: ENV['MAILGUN_API_KEY'],
+    domain: ENV['MAILGUN_DOMAIN']
+  }
   
   config.paperclip_defaults = {
     :storage => :s3,
