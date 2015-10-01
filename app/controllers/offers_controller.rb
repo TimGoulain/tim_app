@@ -5,11 +5,7 @@ class OffersController < ApplicationController
   load_and_authorize_resource
   
   def index
-    if params[:search]
-      @offers = Offer.search(params[:search]).order("created_at DESC")
-    else
-      @offers = Offer.all.order('created_at DESC')
-    end 
+    @offers = Offer.search(params[:search]).order("offers.created_at DESC") 
   end
 
   def show

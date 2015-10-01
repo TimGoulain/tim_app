@@ -3,6 +3,7 @@ class TripsController < ApplicationController
   load_and_authorize_resource
   
   def index
+    @trips = Trip.search(params[:search]).order("trips.started_at DESC")
   end
 
   def show

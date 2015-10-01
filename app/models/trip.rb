@@ -3,7 +3,6 @@ class Trip < ActiveRecord::Base
   # Associations
   
   belongs_to :user
-  has_many :recommendations
   
   # Instance methods
   
@@ -11,4 +10,11 @@ class Trip < ActiveRecord::Base
     name
   end
   
+  def self.search(search)
+    if search.present?
+      where('name LIKE :q OR departure_point LIKE :q OR arrival_point LIKE :q', q:"%#{search}%")
+    else
+      where(true)
+    end
+  end
 end

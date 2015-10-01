@@ -14,10 +14,11 @@ class Offer < ActiveRecord::Base
   delegate :code, to: :sector, prefix: false, allow_nil: true
 
   def self.search(search)
-    if search
-      find(:all, conditions => ['name LIKE ?', "%#{search}%"])
+    if search.present?
+      joins(:sector, :employer)
+      .where('position LIKE :q OR sectors.code LIKE :q OR employers.city LIKE :q OR employers.name LIKE :q OR employers.location LIKE :q', q:"%#{search}%")
     else
-      find(:all)
+      where(true)
     end
   end
 
