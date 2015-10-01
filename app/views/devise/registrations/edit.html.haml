@@ -7,4 +7,4 @@
   = f.input :password, input_html: {autocomplete: "off"}, hint: "(leave blank if you don't want to change it)"
   = f.input :password_confirmation, input_html: {autocomplete: "off"}
   = f.input :current_password, input_html: {autocomplete: "off"}
-  = f.submit "Update", class: "btn btn-primary"
+  = f.submit "Update", class: "btn btn-primary", data: { disable_with: "Please wait..." }

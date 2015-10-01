@@ -1,3 +1,5 @@
+/* Job - show (on the profile of the user) */
+
 .job.well {
   padding-top: 0px; 
   padding-left: 0px;
@@ -60,5 +62,31 @@
   
   .fa-star-o {
     color: gray;
+  }
+}
+
+/* New & Edit */
+
+.job-new {
+  background-color: #FFF;
+  padding-top: 30px;
+  position: relative;
+
+  h1 {
+    border-bottom: 1px solid lightgray;
+    font-size: 200%;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+  }  
+ 
+  h4 {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: gray;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 15px;
+    margin-top: 20px;
   }
 }

@@ -6,13 +6,14 @@
   border-radius: 0px
 }
 
-.well.leftinformation {
-  border: 1px solid #E3E3E3;
+.left-information {
+  border: 0px;
+  background-color: white;
   border-radius: 0px;
-}
 
-.well.information {
-  background-color: #FFF;
+
+  .well {
+  background-color: #F5F5F5;
   color: #000;
   line-height: 25px;
   padding: 0px;
@@ -20,117 +21,27 @@
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.43), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
   border-radius: 0px;
 
-  .label.label-default {
-    font-size: 13px;
-    text-transform: uppercase;
-    float: left;
-    margin-right: 10px;
-    border-radius: 0px;
-    background-color: lightgray;
+    .label.label-default {
+      font-size: 13px;
+      text-transform: uppercase;
+      float: left;
+      margin-right: 10px;
+      border-radius: 0px;
+      background-color: lightgray;
+    }
+  
+    .content {
+      padding-left: 10px;
+      padding-bottom: 5px; 
+    }  
   }
-}  
+}
 
 .job.information {
   padding-top: 25px;
   padding-left: 10px;
   padding-bottom: 5px;
 }
-
-.well.sectors {
-  background-color: #FFF;
-  color: #000;
-  line-height: 25px;
-  padding: 0px;
-  border: 0px solid white;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.43), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
-  border-radius: 0px;
-
-  .label.label-default {
-    font-size: 13px;
-    text-transform: uppercase;
-    float: left;
-    margin-right: 10px;
-    border-radius: 0px;
-    background-color: lightgray;
-  }
-  
-  .sectors.content {
-    padding-left: 10px;
-    padding-bottom: 5px;
-  }
-}  
-
-.well.skills {
-  background-color: #FFF;
-  color: #000;
-  line-height: 25px;
-  padding: 0px;
-  border: 0px solid white;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.43), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
-  border-radius: 0px;
-
-  .label.label-default {
-    font-size: 13px;
-    text-transform: uppercase;
-    float: left;
-    margin-right: 10px;
-    border-radius: 0px;
-    background-color: lightgray;
-  }
-  
-  .skills.content {
-    padding-left: 10px;
-    padding-bottom: 5px;
-  }
-}  
-
-.well.languages {
-  background-color: #FFF;
-  color: #000;
-  line-height: 25px;
-  padding: 0px;
-  border: 0px solid white;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.43), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
-  border-radius: 0px;
-
-  .label.label-default {
-    font-size: 13px;
-    text-transform: uppercase;
-    float: left;
-    margin-right: 10px;
-    border-radius: 0px;
-    background-color: lightgray;
-  }
- 
-  .languages.content {
-    padding-left: 10px;
-    padding-bottom: 5px;
-  }
-}  
-
-.well.computer {
-  background-color: #FFF;
-  color: #000;
-  line-height: 25px;
-  padding: 0px;
-  border: 0px solid white;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.43), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
-  border-radius: 0px;
-
-  .label.label-default {
-    font-size: 13px;
-    text-transform: uppercase;
-    float: left;
-    margin-right: 10px;
-    border-radius: 0px;
-    background-color: lightgray;
-  }
-  
-  .computer.content {
-    padding-left: 10px;
-    padding-bottom: 5px;
-  }
-}   
 
 .rightpart {
   .col-xs-8 {
