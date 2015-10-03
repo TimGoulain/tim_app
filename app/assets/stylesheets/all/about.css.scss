@@ -1,0 +1,29 @@
+.static-about {
+   
+   h1 {
+    font-size: 200%;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+  }  
+
+  h4 {
+    text-transform: uppercase;
+    font-size: 13px;
+    border-bottom: 1px solid lightgray;
+    letter-spacing: 1px;
+    color: gray;
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
+  
+  p {
+    font-size: 13px;
+    text-align: justify;
+    line-height: 25px;
+  }
+  
+  .fa { 
+    line-height: 3;
+  }
+}  

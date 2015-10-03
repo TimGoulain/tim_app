@@ -4,18 +4,18 @@
   %h1 find a job
  
 .container-fluid.offers
-  .row.search
+  .search
     = form_tag offers_path, method: 'get' do
       = text_field_tag :search, params[:search], placeholder: "Search"
       = submit_tag "Search", class: "btn btn-default", :position => nil
       
   %br 
-  .row.offer
+  .offer
     - if @offers.empty?
       .no.offer
         There are no job offers for you yet!
     - else
       = render @offers
   %br
-  .row.newoffer
+  .new-offer
     = link_to 'Post a new job', new_offer_path, class: "btn btn-info"

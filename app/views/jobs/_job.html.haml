@@ -30,11 +30,11 @@
        
   .col-xs-4
     - if can? :edit, job
-      .row.recommendation
+      .recommendation
         = link_to new_job_recommendation_path(job), class: "btn btn-default" do
           %b.fa.fa-envelope-o
           Ask for a recommendation!
-    .row.actions
+    .actions
       .job.actions
         - if can? :edit, job
           = link_to edit_job_path(job), class: "btn btn-default" do

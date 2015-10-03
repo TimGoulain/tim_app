@@ -2,4 +2,4 @@
   = f.input :comment
   = f.input :note, input_html: {type: 'number', class: 'rating'}
   
-  = f.button :submit
+  = f.submit "Post your recommendation", class: "btn btn-default", data: { disable_with: "Please wait..." }

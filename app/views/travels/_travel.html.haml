@@ -33,11 +33,11 @@
   
   .col-xs-4
     - if can? :edit, travel
-      .row.recommendation
+      .recommendation
         = link_to new_travel_opinion_path(travel), class: "btn btn-default" do
           %b.fa.fa-envelope-o 
           Ask for a recommendation
-    .row.actions
+    .actions
       .travel.actions
         - if can? :edit, travel
           = link_to edit_travel_path(travel), class: "btn btn-default" do

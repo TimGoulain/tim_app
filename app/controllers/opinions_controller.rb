@@ -1,8 +1,8 @@
 # encoding: utf-8
 class OpinionsController < ApplicationController
 
-  load_and_authorize_resource :travel
-  load_and_authorize_resource :opinion, through: :travel
+  load_resource :travel
+  load_resource :opinion, through: :travel
   
   def new
   end 

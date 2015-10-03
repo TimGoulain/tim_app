@@ -5,7 +5,6 @@
   background-color: white;
   border: 0px;
   border-radius: 0px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.43), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
 
   .label.label-warning {
     font-size: 13px;
@@ -21,7 +20,6 @@
 }
 
 .travel.else {
-  padding-left: 15px;
   padding-top: 4px;
 }
 
@@ -30,12 +28,6 @@
     font-family: verdana;
     font-weight: light;
     font-size: 13px;
-}
-
-.travel.companions {
-  border-bottom: 1px solid lightgray;
-  margin-bottom: 2px;
-  padding-bottom: 5px;
 }
 
 .travel.description {

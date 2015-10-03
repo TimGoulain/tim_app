@@ -1,0 +1,37 @@
+.user-name
+  %h1.strong 
+    = @user.name
+.well.well-lg.about
+  .aboutme
+    %strong About me
+  .aboutmetext
+    = @user.about_me
+
+- if can? :edit, @user 
+  = link_to profile_edit_path, class: "btn btn-default" do
+    %b.fa.fa-pencil-square-o
+    Edit my profile
+- if can? :edit, @user
+  = link_to edit_user_registration_path(@user), class: "btn btn-default" do
+    %b.fa.fa-lock
+    Edit my login information
+%br
+
+.experiences  
+  %h2 Latest experiences
+  - if can? :edit, @user
+    .add
+      .row
+        .col-xs-6
+          = link_to 'Add a job', new_job_path, class: "btn btn-info"
+        .col-xs-6
+          = link_to 'Add a travel', new_travel_path, class: "btn btn-warning"
+  %br
+  .render-jobs
+    = render @user.jobs.reverse
+  %br
+  .render-travels
+    = render @user.travels.reverse
+
+  .back
+    = link_to 'Back', travels_path, class: "btn btn-default"

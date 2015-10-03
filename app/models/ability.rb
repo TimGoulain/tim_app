@@ -36,12 +36,14 @@ class Ability
       can :manage, :all
     end
 
-    can [:read], User
+    can :read, User
     can :manage, User, id: user.id
 
     can :manage, Job, user_id: user.id
     
-    can :manage, Recommendation
+    can :create, Recommendation
+    
+    can :create, Opinion
     
     can :manage, Travel, user_id: user.id
     
