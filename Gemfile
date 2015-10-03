@@ -16,6 +16,7 @@ group :production do
 end
 
 # Improvement gems
+gem 'thin'
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass', '~> 4.3.0'
