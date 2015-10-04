@@ -13,7 +13,7 @@ class EmployersController < ApplicationController
 
   def create
     if @employer.save
-      redirect_to users_path, notice: 'Employer was successfully added.'
+      redirect_to offers_path, notice: 'Employer was successfully added.'
     else
       render :new
     end
