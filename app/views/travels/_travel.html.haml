@@ -1,28 +1,28 @@
-.travel  
+.row.travel  
   .col-xs-8
-    .travel.well
-      .travel.header
+    .well
+      .header
         .label.label-warning= "TRIP"
         = travel.visit
-      .travel.else
-        .travel.dates
+      .else
+        .dates
           Started on
           #{travel.started_at.strftime("%d %B %Y")}
           Ended on 
           #{travel.ended_at.strftime("%d %B %Y")}
-        .travel.route  
+        .route  
           From
           = travel.departure_point
           To
           = travel.arrival_point
-        .travel.companions
+        .companions
           - if travel.cotraveller
             With
             = travel.cotraveller
-        .travel.description  
+        .description  
           = travel.memory
         - travel.opinions.each do |opinion|
-          .travel.opinion
+          .recommendation
             - if opinion.comment
               %b.fa.fa-comment-o
               = opinion.comment
@@ -33,15 +33,14 @@
   
   .col-xs-4
     - if can? :edit, travel
-      .recommendation
+      .ask-recommendation
         = link_to new_travel_opinion_path(travel), class: "btn btn-default" do
           %b.fa.fa-envelope-o 
           Ask for a recommendation
     .actions
-      .travel.actions
-        - if can? :edit, travel
-          = link_to edit_travel_path(travel), class: "btn btn-default" do
-            %b.fa.fa-pencil-square-o   
-        - if can? :destroy, travel
-          = link_to travel, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
-            %b.fa.fa-times
+      - if can? :edit, travel
+        = link_to edit_travel_path(travel), class: "btn btn-default" do
+          %b.fa.fa-pencil-square-o   
+      - if can? :destroy, travel
+        = link_to travel, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+          %b.fa.fa-times

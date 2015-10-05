@@ -1,23 +1,20 @@
-.job-new
-  = simple_form_for(@job) do |f|
-    = f.error_notification
-    .row
-      .col-md-6
-        .job-fields
-          %h4 About the job
-          = f.input :position, label: "Position", placeholder: "Ex:Barman"
-          = f.input :description, label: "Description", placeholder: "Making cocktails, preparing delicious capucinni"
-          = f.association :sector
-          = f.input :started_at, as: :string, input_html: {class: 'date-picker'}
-          = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
-      .col-md-6
-        .employer-field
-          %h4 About the employer
-          = f.simple_fields_for :employer do |g|
-            = g.input :name, label: "Company - Organisation - Name of the establishment"
-            = g.input :city
-            = g.select :location, States_and_Territories: [ 'Ashmore and Cartier Islands', 'Australian Antarctic Territory', 'Australian Capital Territory', 'Christmas Island', 'Cocos (Keeling) Islands', 'Coral Sea Islands', 'Heard Island and McDonald Islands', 'Jervis Bay Territory', 'New South Wales', 'Norfolk Island', 'Northern Territory', 'Queensland', 'South Australia', 'Tasmania', 'Victoria', 'Western Australia' ]
-    
-    .row
-      .job-actions
-        = f.submit "Add the job", class: "btn btn-default", data: { disable_with: "Please wait..." }
+= simple_form_for(@job) do |f|
+  = f.error_notification
+  .row
+    .col-md-6
+      .subtitle
+        %h4 About the job
+        = f.input :position, label: "Position", placeholder: "Ex:Barman"
+        = f.input :description, label: "Description", placeholder: "Making cocktails, preparing delicious capucinni"
+        = f.association :sector
+        = f.input :started_at, as: :string, input_html: {class: 'date-picker'}
+        = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
+    .col-md-6
+      .subtitle
+        %h4 About the employer
+        = f.simple_fields_for :employer do |g|
+          = g.input :name, label: "Company - Organisation - Name of the establishment"
+          = g.input :city
+          = g.select :location, States_and_Territories: [ 'Ashmore and Cartier Islands', 'Australian Antarctic Territory', 'Australian Capital Territory', 'Christmas Island', 'Cocos (Keeling) Islands', 'Coral Sea Islands', 'Heard Island and McDonald Islands', 'Jervis Bay Territory', 'New South Wales', 'Norfolk Island', 'Northern Territory', 'Queensland', 'South Australia', 'Tasmania', 'Victoria', 'Western Australia' ]
+  
+  = f.submit "Add the job", class: "btn btn-info", data: { disable_with: "Please wait..." }

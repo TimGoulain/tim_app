@@ -1,44 +1,45 @@
-.col-md-8
-  .well.trip
-    .label.label-warning
-      = trip.departure_point
-      %b.fa.fa-long-arrow-right
-      = trip.arrival_point
-    .trip.core
-      %h5
-        - if trip.first_name
-          Posted by
-          = trip.first_name
-        - if trip.cotraveller.present?
-          = "- with"
-          = trip.cotraveller    
-    .trip.dates
-      - if trip.started_at
-        Departure on 
-        #{trip.started_at.strftime("%d %B %Y")}
-      - if trip.ended_at
-        | Arrival on 
-        #{trip.ended_at.strftime("%d %B %Y")}
-      - if trip.flexible_date.present?
-        = "- The arrival date is flexible!"
-    .trip.description
-      - if trip.name 
-        = trip.name
-
-.col-md-4.trips.actions
-  .trip.join
-    - if can? :read, trip
-      = link_to trip_path(trip), class: "btn btn-danger" do
-        %b.fa.fa-thumbs-o-up
-        I want to join!
-    - else 
-      = link_to new_user_registration_path, class: "btn btn-danger" do
-        %b.fa.fa-thumbs-o-up
-        I want to join!
-    - if can? :update, trip
-      = link_to edit_trip_path(trip), class: "btn btn-default" do
-        %b.fa.fa-pencil-square-o
-    - if can? :destroy, trip
-      = link_to trip, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
-        %b.fa.fa-times
+.row.trip
+  .col-md-8
+    .well.core
+      .label.label-warning
+        = trip.departure_point
+        %b.fa.fa-long-arrow-right
+        = trip.arrival_point
+      .main
+        %h5
+          - if trip.first_name
+            Posted by
+            = trip.first_name
+          - if trip.cotraveller.present?
+            = "- with"
+            = trip.cotraveller    
+      .dates
+        - if trip.started_at
+          Departure on 
+          #{trip.started_at.strftime("%d %B %Y")}
+        - if trip.ended_at
+          | Arrival on 
+          #{trip.ended_at.strftime("%d %B %Y")}
+        - if trip.flexible_date.present?
+          = "- The arrival date is flexible!"
+      .description
+        - if trip.name 
+          = trip.name
+  
+  .col-md-4
+    .join
+      - if can? :read, trip
+        = link_to trip_path(trip), class: "btn btn-danger" do
+          %b.fa.fa-thumbs-o-up
+          I want to join!
+      - else 
+        = link_to new_user_registration_path, class: "btn btn-danger" do
+          %b.fa.fa-thumbs-o-up
+          I want to join!
+      - if can? :update, trip
+        = link_to edit_trip_path(trip), class: "btn btn-default" do
+          %b.fa.fa-pencil-square-o
+      - if can? :destroy, trip
+        = link_to trip, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+          %b.fa.fa-times
   

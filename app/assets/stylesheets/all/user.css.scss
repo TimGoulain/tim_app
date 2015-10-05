@@ -1,3 +1,5 @@
+/* Left part of the profile */
+
 .well.picture {
   width: 150px;
   height: 150px;
@@ -34,72 +36,54 @@
       padding-bottom: 5px; 
     }  
   }
-}
 
-.job.information {
-  padding-top: 25px;
-  padding-bottom: 5px;
-}
-
-.rightpart {
-  .col-xs-8 {
-    padding-left: 15px; 
+  .job-information {
+    padding-top: 25px;
+    padding-bottom: 5px;
   }
 }
 
-.user-name {
-  margin-left: 0px;
-}
-
-.well.well-lg.about {
-  background-color: white;
-  border: 1px solid rgba(211, 211, 211, 0.33);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.43), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
-  padding: 14px;
-  border-radius: 0px;
-}
-
-.aboutme {
-  text-transform: uppercase;
-  margin-bottom: 2px;
-}
-
-.experiences {
-  h2 {
-    text-transform: uppercase;
-    letter-spacing: 12px;
-    font-size: 24px;
-    color: gray;
-  }
-}
-
-.add {
-  margin: 0px;
-  padding: 0px;
+/* Right part of the profile */
   
-  .col-xs-6 {
-  padding: 0px;
+.right-information {
+    padding-left: 15px; 
+
+  .user-name {
+    h1 {
+    margin-left: 0px;
+    }
+  }
+
+  .about {
+    background-color: white;
+    border: 1px solid rgba(211, 211, 211, 0.33);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.43), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
+    padding: 14px;
+    border-radius: 0px;
+ 
+    .about-me {
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+  }
+
+  .experiences {
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: 12px;
+      font-size: 24px;
+      color: gray;
+    }
+  }
+
+  .add {
+    margin: 0px;
+    padding: 0px;
   }
 }
+    
+/* Edit & New profile */
 
-.edit.user {
-  h1 {
-    border-bottom: 1px solid lightgray;
-    font-size: 200%;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    padding-bottom: 10px;
-  }
-}
-
-.edit.form.title {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 6px;
-  font-size: 15px;
-  color: lightgray
-}
-
-.edit.form.actions {
+.edit-actions {
   margin-bottom: 10px;
 }

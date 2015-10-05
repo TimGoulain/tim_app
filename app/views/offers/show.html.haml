@@ -1,42 +1,43 @@
 %jumbotron
-  .offer-show
-    %h1 Apply now ! 
+  
+.page-title
+  %h1 Apply now ! 
     
-    .well.show-offer
-      .offer-job-summary
-        %h4= "Position"
-        = @offer.position
-        %h4= "Employer"
-        %b= @offer.name
-        %br
-        %b.fa.fa-map-marker
-        \|
-        = @offer.city
-        - if @offer.location
-          = "-"
-          = @offer.location
-        %br
-        %b.fa.fa-envelope-o
-        \|
-        = @offer.contact_point
-        %h4= "Description"
-        = @offer.description
-        %h4= "Dates"
-        %b.fa.fa-calendar
-        Starts on 
-        #{@offer.started_at.strftime("%d %B %Y")}
-        %br
-        %b.fa.fa-calendar
-        Ends on
-        #{@offer.ended_at.strftime("%d %B %Y")}
-        %h4= "Posted by"
-        = @offer.created_by 
+.well.show-offer
+  .subtitle
+    %h4= "Position"
+    = @offer.position
+    %h4= "Employer"
+    %b= @offer.name
+    %br
+    %b.fa.fa-map-marker
+    \|
+    = @offer.city
+    - if @offer.location
+      = "-"
+      = @offer.location
+    %br
+    %b.fa.fa-envelope-o
+    \|
+    = @offer.contact_point
+    %h4= "Description"
+    = @offer.description
+    %h4= "Dates"
+    %b.fa.fa-calendar
+    Starts on 
+    #{@offer.started_at.strftime("%d %B %Y")}
+    %br
+    %b.fa.fa-calendar
+    Ends on
+    #{@offer.ended_at.strftime("%d %B %Y")}
+    %h4= "Posted by"
+    = @offer.created_by 
 
-  .offer-actions 
-    - if can? :update, @offer
-      = link_to edit_offer_path(@offer), class: "btn btn-default" do
-        %b.fa.fa-pencil-square-o
-    - if can? :destroy, @offer
-      = link_to @offer, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
-        %b.fa.fa-times
-    = link_to 'Back', offers_path, class: "btn btn-default"
+.offer-actions 
+  - if can? :update, @offer
+    = link_to edit_offer_path(@offer), class: "btn btn-default" do
+      %b.fa.fa-pencil-square-o
+  - if can? :destroy, @offer
+    = link_to @offer, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+      %b.fa.fa-times
+  = link_to 'Back', offers_path, class: "btn btn-default"

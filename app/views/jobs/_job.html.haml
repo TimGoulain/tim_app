@@ -1,25 +1,25 @@
-.job 
+.row.job 
   .col-xs-8
-    .job.well
+    .well
       .label.label-info= job.code
-      .job.name
+      .name
         = job.position
         at
         = job.name
-      .job.else
-        .job.dates
+      .else
+        .dates
           From
           #{job.started_at.strftime("%d %B %Y")}
           To 
           #{job.ended_at.strftime("%d %B %Y")}   
-        .job.places
+        .places
           = job.city
           |
           = job.location
-        .job.description
+        .description
           = job.description
         - job.recommendations.each do |recommendation|
-          .job.recommendation
+          .recommendation
             - if recommendation.comment
               %b.fa.fa-comment-o
               = recommendation.comment
@@ -30,15 +30,14 @@
        
   .col-xs-4
     - if can? :edit, job
-      .recommendation
+      .ask-recommendation
         = link_to new_job_recommendation_path(job), class: "btn btn-default" do
           %b.fa.fa-envelope-o
           Ask for a recommendation!
     .actions
-      .job.actions
-        - if can? :edit, job
-          = link_to edit_job_path(job), class: "btn btn-default" do
-            %b.fa.fa-pencil-square-o   
-        - if can? :destroy, job
-          = link_to job, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" do
-            %b.fa.fa-times
+      - if can? :edit, job
+        = link_to edit_job_path(job), class: "btn btn-default" do
+          %b.fa.fa-pencil-square-o   
+      - if can? :destroy, job
+        = link_to job, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" do
+          %b.fa.fa-times

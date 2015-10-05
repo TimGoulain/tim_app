@@ -1,7 +1,7 @@
 - provide(:title, 'Post a job')
 
-.job-new  
+.page-title 
   %h1 New job
   
   = render 'form'
-  = link_to 'Back', user_path(current_user)
+  = link_to 'Back', user_path(current_user), class: "btn btn-default"
