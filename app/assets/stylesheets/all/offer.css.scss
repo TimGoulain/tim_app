@@ -1,46 +1,15 @@
-/* Index title */
-
-.offer-index {
-  background-color: #FFF;
-  padding-top: 30px;
-  position: relative;
-
-  h1 {
-    border-bottom: 1px solid lightgray;
-    font-size: 200%;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    padding-bottom: 10px;
-  }
-}
-
-/* Index - Search bar */
-
-.search {
-  margin-left: 11px;
-}
-
-.no.offer {
-  margin: 20px;
-  font-style: italic;
-  padding-left: 5px;
-}
-
 /* Index - List of offers */
 
-.well.offer.core {
+.well.core {
   padding-top: 10px; 
   padding-left: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   background-color: white;
   border: 0px;
   border-radius: 0px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.43), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
-  
-  .well {
-    box-shadow: 0px;
-  }
-  
+  box-shadow: 0;
+  border-bottom: 1px solid lightgray;
+ 
   .label.label-info {
     font-size: 13px;
     text-transform: uppercase;
@@ -53,49 +22,35 @@
       float: left;
     }
   }
-} 
  
-.offer.information {
-  h5 { 
-    font-weight: bold;
-    margin-top: 2px;
-    margin-bottom: 5px;
+  .information {
+    h5 { 
+      font-weight: bold;
+      margin-top: 2px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .started-on {
+    font-size: 12px; 
+  }
+
+  .description {
+    font-style: italic;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+  .posted-on {
+    font-family: arial; 
+    font-size: 11px;
+    color:gray;
   }
 }
-
-.offer.startson {
-  font-size: 12px; 
-}
-
-.offer.description {
-  font-style: italic;
-  font-size: 12px;
-  margin-right: 10px;
-}
-
-.offer.postedon {
-  font-family: arial; 
-  font-size: 11px;
-  color:gray
-}
-
+  
 /* Show - After clicking on I'm interested! */
 
-.offer-show {
-  background-color: #FFF;
-  padding-top: 30px;
-  position: relative;
-
-  h1 {
-    border-bottom: 1px solid lightgray;
-    font-size: 200%;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    padding-bottom: 10px;
-  }  
-}
-
-.well.show-offer {
+.show-offer {
   padding-top: 10px; 
   padding-left: 10px;
   padding-bottom: 20px;
@@ -104,40 +59,5 @@
   border-radius: 0px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.43), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
   max-width: 1100px;
-
-  h4 {
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: gray;
-    border-bottom: 1px solid lightgray;
-    margin-bottom: 15px;
-    margin-top: 20px;
-  }
 }
 
-/* Edit & New */
-
-.offer-new {
-  background-color: #FFF;
-  padding-top: 30px;
-  position: relative;
-
-  h1 {
-    border-bottom: 1px solid lightgray;
-    font-size: 200%;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    padding-bottom: 10px;
-  }  
- 
-  h4 {
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: gray;
-    border-bottom: 1px solid lightgray;
-    margin-bottom: 15px;
-    margin-top: 20px;
-  }
-}

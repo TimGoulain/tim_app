@@ -1,41 +1,42 @@
-.col-md-8.core
-  .well.offer.core
-    .label.label-info
-      %b.fa{class: offer_image(offer)}
-      = offer.code
-    .offer.information
-      %h5
-        = offer.position
-        - if offer.city
-          |
-          = offer.city
-        - if offer.location
+.row.offer
+  .col-md-8
+    .well.core
+      .label.label-info
+        %b.fa{class: offer_image(offer)}
+        = offer.code
+      .information
+        %h5
+          = offer.position
+          - if offer.city
+            |
+            = offer.city
+          - if offer.location
+            = "-"
+            = offer.location
+      .started-on
+        - if offer.started_at 
+          Starts on #{offer.started_at.strftime("%d %B %Y")}
+        - if offer.ended_at
           = "-"
-          = offer.location
-    .offer.startson
-      - if offer.started_at 
-        Starts on #{offer.started_at.strftime("%d %B %Y")}
-      - if offer.ended_at
-        = "-"
-        Ends on #{offer.ended_at.strftime("%d %B %Y")}
-    .offer.description       
-      - if offer.description
-        = offer.description
-    .offer.postedon
-      Posted on #{offer.created_at.strftime("%d %B %Y")}  
-.col-md-4.actions
-  .offer.actions
-    - if can? :read, offer
-      = link_to offer_path(offer), class: "btn btn-danger" do
-        %b.fa.fa-thumbs-o-up
-        I'm interested!
-    - else 
-      = link_to new_user_registration_path, class: "btn btn-danger" do
-        %b.fa.fa-thumbs-o-up
-        I'm interested!
-    - if can? :update, offer
-      = link_to edit_offer_path(offer), class: "btn btn-default" do
-        %b.fa.fa-pencil-square-o
-    - if can? :destroy, offer
-      = link_to offer, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
-        %b.fa.fa-times
+          Ends on #{offer.ended_at.strftime("%d %B %Y")}
+      .description       
+        - if offer.description
+          = offer.description
+      .posted-on
+        Posted on #{offer.created_at.strftime("%d %B %Y")}  
+  .col-md-4
+    .actions
+      - if can? :read, offer
+        = link_to offer_path(offer), class: "btn btn-danger" do
+          %b.fa.fa-thumbs-o-up
+          I'm interested!
+      - else 
+        = link_to new_user_registration_path, class: "btn btn-danger" do
+          %b.fa.fa-thumbs-o-up
+          I'm interested!
+      - if can? :update, offer
+        = link_to edit_offer_path(offer), class: "btn btn-default" do
+          %b.fa.fa-pencil-square-o
+      - if can? :destroy, offer
+        = link_to offer, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+          %b.fa.fa-times

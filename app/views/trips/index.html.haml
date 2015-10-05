@@ -1,19 +1,20 @@
 - provide(:title, "Travel offers")
 
-.trip-index
+.page-title
   %h1 join a travel
-.container-fluid.trip
+  
+.trips
+
   .search 
     = form_tag trips_path, method: :get do
       = text_field_tag :search, params[:search], placeholder: "Search"
       = submit_tag "Search", class: "btn btn-default", :name => nil
   %br
-  .trip
-    - if @trips.empty?
-      .no.trip
-        There are no travel offers for you yet!
-    - else 
-      = render @trips
+  
+  - if @trips.empty?
+    .no-result There are no travel offers for you yet!
+  - else 
+    = render @trips
   %br
   .new-trip
     = link_to 'Post a new travel offer', new_trip_path, class: "btn btn-warning"

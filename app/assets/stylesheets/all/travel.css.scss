@@ -1,51 +1,39 @@
-.travel.well {
-  padding-top: 0px; 
-  padding-left: 0px;
-  padding-bottom: 5px;
-  background-color: white;
-  border: 0px;
-  border-radius: 0px;
-
-  .label.label-warning {
-    font-size: 13px;
-    text-transform: uppercase;
-    float: left;
-    margin-right: 10px;
+.travel {
+  .well {
+    padding-top: 0px; 
+    padding-left: 0px;
+    padding-bottom: 5px;
+    background-color: white;
+    border: 0px;
     border-radius: 0px;
+    box-shadow: 0px;
+  
+    .label.label-warning {
+      font-size: 13px;
+      text-transform: uppercase;
+      float: left;
+      margin-right: 10px;
+      border-radius: 0px;
+    }
   }
-}
-.travel.header {
-  text-transform: uppercase;
-  font-weight: bold;
-}
 
-.travel.else {
-  padding-top: 4px;
-}
+  .header {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 
-.travel.dates {
-    color: gray;
-    font-family: verdana;
-    font-weight: light;
-    font-size: 13px;
-}
+  .else {
+    padding-top: 4px;
+  }
 
-.travel.description {
-  padding-top: 1px;
-}
+  .dates {
+      color: gray;
+      font-family: verdana;
+      font-weight: light;
+      font-size: 13px;
+  }
 
-/* Opinion */
-
-.travel.opinion {
-  border-top: 1px solid gray;
-  margin-top: 5px;
-  padding-top: 5px;
-  
-  .fa-star {
-    color: rgb(252, 184, 20);
-  }  
-  
-  .fa-star-o {
-    color: gray;
+  .description {
+    padding-top: 1px;
   }
 }

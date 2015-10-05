@@ -1,21 +1,21 @@
 - provide(:title, "Job offers")
 
-.offer-index
+.page-title
   %h1 find a job
- 
-.container-fluid.offers
+
+.offers
+  
   .search
     = form_tag offers_path, method: 'get' do
       = text_field_tag :search, params[:search], placeholder: "Search"
       = submit_tag "Search", class: "btn btn-default", :position => nil
-      
+        
   %br 
-  .offer
-    - if @offers.empty?
-      .no.offer
-        There are no job offers for you yet!
-    - else
-      = render @offers
+
+  - if @offers.empty?
+    .no-result There are no job offers for you yet!
+  - else
+    = render @offers
   %br
   .new-offer
     = link_to 'Post a new job', new_offer_path, class: "btn btn-info"

@@ -1,7 +1,6 @@
-.job-new
-  %h1 Create your profile
+.page-title
+  %h1 Add a job
   
-  = render 'form'
+= render 'form'
   
-  = link_to "Show", @user 
-  = link_to "Back", root_path
+= link_to "Back", user_path(current_user), class: "btn btn-default"

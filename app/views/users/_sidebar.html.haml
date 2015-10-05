@@ -9,26 +9,26 @@
   .sidebox.information
     .left-title
       main information
-    .job.information
+    .job-information
       .birth
         - if @user.birth
           Born on
           #{@user.birth.strftime("%d %B %Y")}
-      .user.location
+      .location
         %b.fa.fa-map-marker
         - if @user.current_location.blank?
           On the road
         - else
           = @user.current_location
-      .user.email
+      .email
         - if @user.email
           %b.fa.fa-envelope
           = @user.email    
-      .user.phone
+      .phone
         - if @user.phone
           %b.fa.fa-phone
           = @user.phone
-      .user.driving
+      .driving
       - if @user.driving_licence
         %b.fa.fa-car
         Driving Licence 
@@ -37,7 +37,7 @@
     .left-title
       sectors  
     %br
-    .sectors.content
+    .content
       - if @user.sector
         = @user.sector
       - else
@@ -50,7 +50,7 @@
     .left-title
       skills
     %br  
-    .skills.content
+    .content
       - if @user.skills
         = @user.skills
       - else
@@ -63,7 +63,7 @@
     .left-title
       Languages
     %br
-    .languages.content
+    .content
       - if @user.languages
         = @user.languages
       - else
@@ -76,7 +76,7 @@
     .left-title
       computer skills
     %br
-    .computer.content
+    .content
       - if @user.computer_skills
         = @user.computer_skills
       - else
