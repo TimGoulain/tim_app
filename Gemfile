@@ -23,7 +23,7 @@ gem 'font-awesome-sass', '~> 4.3.0'
 gem 'simple_form'
 gem 'dotenv-rails'
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2'
 
 # Useful gems
 gem 'devise'
