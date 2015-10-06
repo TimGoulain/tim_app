@@ -22,7 +22,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass', '~> 4.3.0'
 gem 'simple_form'
 gem 'dotenv-rails'
-gem 'paperclip', '~> 4.3.0'
+gem 'paperclip'
 gem 'aws-sdk'
 
 # Useful gems
