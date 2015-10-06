@@ -1,12 +1,14 @@
-%h1 Your recommendation
+.page-title
+  %h1 Your recommendation
 
-.col-md-9
-  - 5.times do |i|
-    %i.fa{class: "fa-star#{'-o' if i+1 > recommendation.note}"}
-  = recommendation.comment
-  
-.col-md-3
-  - if can? :destroy, @recommendation
-    = link_to @recommendation, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
-      %b.fa.fa-times
-  = link_to 'Back', user_path(user), class: "btn btn-default"
+.row
+  .col-md-9
+    - 5.times do |i|
+      %i.fa{class: "fa-star#{'-o' if i+1 > recommendation.note}"}
+    = recommendation.comment
+    
+  .col-md-3
+    - if can? :destroy, @recommendation
+      = link_to @recommendation, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
+        %b.fa.fa-times
+    = link_to 'Back', user_path(user), class: "btn btn-default"
