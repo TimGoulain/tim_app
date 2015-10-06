@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: { case_sensitive: false }
   
-  # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/, :allow_nil => true
+  validates_attachment :avatar, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
   
   # Callbacks
   before_create :set_user_name
