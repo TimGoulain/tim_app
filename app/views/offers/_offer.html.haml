@@ -3,7 +3,7 @@
     .well.core
       .label.label-info
         %b.fa{class: offer_image(offer)}
-        = offer.code
+        = offer.code if offer.sector 
       .information
         %h5
           = offer.position
