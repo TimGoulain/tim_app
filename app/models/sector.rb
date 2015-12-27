@@ -3,6 +3,7 @@ class Sector < ActiveRecord::Base
   
   # Associations
   has_many :jobs
+  has_many :offers
   
     # Validations
   
