@@ -3,38 +3,37 @@
 .page-title
   %h1 Get on !
     
-.well.show-trip
-  .subtitle
-    %h4= "travellers"
+.show-trip
+  .subtitle-without-border
+    %h4 travellers
     = @trip.user.name
     - if @trip.cotraveller
       with
       = @trip.cotraveller
-  .trip-description
-    %h4= "description"
+    %br
+    %h4 description
     = @trip.name      
-  .locations-and-date
-    .locations_and_date.title
-      %h4= "trip details"
-      %b.fa.fa-map-marker
-      This trip goes from
-      = @trip.departure_point
-      to
-      = @trip.arrival_point
+    %br
+    %h4 trip details
+    %b.fa.fa-map-marker
+    This trip goes from
+    = @trip.departure_point
+    to
+    = @trip.arrival_point
+    %br
+    - if @trip.started_at
+      %b.fa.fa-calendar
+      We will leave on
+      #{@trip.started_at.strftime("%d %B %Y")}
       %br
-      - if @trip.started_at
-        %b.fa.fa-calendar
-        We will leave on
-        #{@trip.started_at.strftime("%d %B %Y")}
-        %br
-      - if @trip.ended_at
-        %b.fa.fa-calendar
-        We will arrive on 
-        #{@trip.ended_at.strftime("%d %B %Y")}
-      - if @trip.flexible_date.present?
-        = "We are flexible on the dates, contact us to know more!"
-  .contact_information
-    %h4= "contact details"
+    - if @trip.ended_at
+      %b.fa.fa-calendar
+      We will arrive on 
+      #{@trip.ended_at.strftime("%d %B %Y")}
+    - if @trip.flexible_date.present?
+      = "We are flexible on the dates, contact us to know more!"
+    %br
+    %h4 contact details
     - if @trip.phone
       %b.fa.fa-phone
       \|

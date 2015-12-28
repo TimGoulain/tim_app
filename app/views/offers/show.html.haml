@@ -3,26 +3,24 @@
 .page-title
   %h1 Apply now ! 
     
-.well.show-offer
-  .subtitle
-    %h4= "Position"
+.show-offer
+  .subtitle-without-border
+    %h4 Position
     = @offer.position
-    %h4= "Employer"
+    %h4 Employer
     %b= @offer.name
     %br
     %b.fa.fa-map-marker
-    \|
     = @offer.city
     - if @offer.location
       = "-"
       = @offer.location
     %br
     %b.fa.fa-envelope-o
-    \|
     = @offer.contact_point
-    %h4= "Description"
+    %h4 Description
     = @offer.description
-    %h4= "Dates"
+    %h4 Dates
     %b.fa.fa-calendar
     Starts on 
     #{@offer.started_at.strftime("%d %B %Y")}
@@ -30,7 +28,7 @@
     %b.fa.fa-calendar
     Ends on
     #{@offer.ended_at.strftime("%d %B %Y")}
-    %h4= "Posted by"
+    %h4 Posted by
     = @offer.created_by 
 
 .offer-actions 
