@@ -30,6 +30,7 @@
       %b.fa.fa-calendar
       We will arrive on 
       #{@trip.ended_at.strftime("%d %B %Y")}
+      %br
     - if @trip.flexible_date.present?
       = "We are flexible on the dates, contact us to know more!"
     %br
