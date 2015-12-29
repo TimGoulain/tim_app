@@ -1,2 +1,5 @@
-!!!
-%html
+%h5 Recommendation request
+
+%p A former employer of yours asked for your recommendation!
+  
+%p= link_to "Click here to post a recommendation", edit_job_recommendation_path(@job, @recommendation, token: @recommendation.authentication_token), class: "btn btn-default"
