@@ -16,7 +16,7 @@ class TripsController < ApplicationController
   end
 
   def create
- 
+      
     if @trip.save
       redirect_to trips_path, notice: 'Your travel offer was successfully added to the list!'
     else

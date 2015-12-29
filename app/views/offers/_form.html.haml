@@ -8,8 +8,8 @@
           %h4= "About the job"
           = f.input :position, placeholder: "Ex: Barman"
           = f.input :description
-          = f.input :started_at, as: :string, input_html: {class: 'date-picker'}
-          = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
+          = f.input :started_at, as: :string, input_html: {class: 'date-picker'}, placeholder: "DD/MM/YYYY"
+          = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}, placeholder: "DD/MM/YYYY"
           = f.association :sector
       .col-md-6  
         .information-employer 

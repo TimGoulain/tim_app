@@ -16,8 +16,8 @@
           = f.input :departure_point, label: "City or place of departure", placeholder: "ex: Perth"
           = f.input :arrival_point, label: "City or place of arrival", placeholder: "ex: Broome"
           = f.input :name, label: "Description", placeholder: "Shortly describe your trip, give the transport means you'll use and so on, ex: Cool trip in a van with nice people"
-          = f.input :started_at, as: :string, input_html: {class: 'birthday-picker'}
-          = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
+          = f.input :started_at, as: :string, input_html: {class: 'date-picker'}, placeholder: "DD/MM/YYYY"
+          = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}, placeholder: "DD/MM/YYYY"
           = f.input :flexible_date, label: "Are these dates flexible?"
     .form-actions
       = f.submit "Post this offer", class: "btn btn-warning", data: { disable_with: "Please wait..." }

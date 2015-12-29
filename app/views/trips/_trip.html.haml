@@ -7,11 +7,14 @@
         = trip.arrival_point
       .main
         %h5
-          - if trip.first_name
+          - if trip.user.name
+            Posted by
+            = trip.user.name
+          - else
             Posted by
             = trip.first_name
           - if trip.cotraveller.present?
-            = "- with"
+            = "with"
             = trip.cotraveller    
       .dates
         - if trip.started_at

@@ -3,8 +3,8 @@
   = f.input :visit
   = f.input :departure_point, label: "From", placeholder: "Ex: Sydney"
   = f.input :arrival_point, label: "To", placeholder: "Ex: Melbourne"
-  = f.input :started_at, as: :string, input_html: {class: 'date-picker'}
-  = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}
+  = f.input :started_at, as: :string, input_html: {class: 'date-picker'}, placeholder: "DD/MM/YYYY"
+  = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}, placeholder: "DD/MM/YYYY"
   = f.input :cotraveller, label: "Your travel companions", placeholder: "Ex: Kate and William"
   = f.input :memory, label: "Notes and memories", placeholder: "What did you like in particular, or learn, or do etc."
   = f.submit "Add the travel", class: "btn btn-default", data: { disable_with: "Please wait..." }
