@@ -24,7 +24,7 @@ class RecommendationsController < ApplicationController
   end
 
   def update
-    if params[:token] == @recommendation.authentication_token
+    if token == @recommendation.authentication_token
       @recommendation.save
       redirect_to root_path, notice: 'The recommendation was successfully posted'
     else
