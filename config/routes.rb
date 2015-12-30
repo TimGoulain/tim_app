@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :users, only: [:index, :show, :update]
   resources :jobs, except: [:index] do
-    resources :recommendations, except: [:index]
+    resources :recommendations
   end
   resources :sectors
 

@@ -3,10 +3,13 @@
 
 .row
   .col-md-9
-    - 5.times do |i|
-      %i.fa{class: "fa-star#{'-o' if i+1 > recommendation.note}"}
-    = recommendation.comment
-    
+    - if recommendation.note.nil?
+      You have 1 pending recommendation
+    - else    
+      - 5.times do |i|
+        %i.fa{class: "fa-star#{'-o' if i+1 > recommendation.note}"}
+      = recommendation.comment
+      
   .col-md-3
     - if can? :destroy, @recommendation
       = link_to @recommendation, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-default" do
