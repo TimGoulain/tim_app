@@ -24,6 +24,8 @@ class RecommendationsController < ApplicationController
   end
 
   def update
+    puts params[:token]
+    puts @recommendation.authentication_token
     if params[:token] == @recommendation.authentication_token
       @recommendation.save
       redirect_to root_path, notice: 'The recommendation was successfully posted'
@@ -39,7 +41,7 @@ class RecommendationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def recommendation_params
-    params.require(:recommendation).permit(:note, :comment, :recipient_email, :job_id, :authentication_token)
+    params.require(:recommendation).permit(:note, :comment, :recipient_email, :job_id)
   end
   
 end

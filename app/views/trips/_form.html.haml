@@ -13,8 +13,8 @@
       .col-md-6
         .information-trip
           %h4= "About the trip"
-          = f.input :departure_point, label: "City or place of departure", placeholder: "ex: Perth"
-          = f.input :arrival_point, label: "City or place of arrival", placeholder: "ex: Broome"
+          = f.input :departure_point, label: "From", placeholder: "City or place of departure"
+          = f.input :arrival_point, label: "To", placeholder: "City or place of arrival"
           = f.input :name, label: "Description", placeholder: "Shortly describe your trip, give the transport means you'll use and so on, ex: Cool trip in a van with nice people"
           = f.input :started_at, as: :string, input_html: {class: 'date-picker'}, placeholder: "DD/MM/YYYY"
           = f.input :ended_at, as: :string, input_html: {class: 'date-picker'}, placeholder: "DD/MM/YYYY"

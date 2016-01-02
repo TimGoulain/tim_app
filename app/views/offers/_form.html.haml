@@ -19,6 +19,7 @@
             = g.input :city
             = g.select :location, States_and_Territories: [ 'Ashmore and Cartier Islands', 'Australian Antarctic Territory', 'Australian Capital Territory', 'Christmas Island', 'Cocos (Keeling) Islands', 'Coral Sea Islands', 'Heard Island and McDonald Islands', 'Jervis Bay Territory', 'New South Wales', 'Norfolk Island', 'Northern Territory', 'Queensland', 'South Australia', 'Tasmania', 'Victoria', 'Western Australia' ]
             %br
-            = g.input :contact_point
+            %br
+            = g.input :contact_point, label: "Your contact details", placeholder: "Phone or email"
     .offer-form-actions
       = f.button :submit, class: "btn btn-info", data: { disable_with: "Please wait..." }

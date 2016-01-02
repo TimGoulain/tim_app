@@ -23,11 +23,11 @@
     %h4 Dates
     %b.fa.fa-calendar
     Starts on 
-    #{@offer.started_at.strftime("%d %B %Y")}
+    #{@offer.started_at.try(:strftime, "%d %B %Y")}
     %br
     %b.fa.fa-calendar
     Ends on
-    #{@offer.ended_at.strftime("%d %B %Y")}
+    #{@offer.ended_at.try(:strftime, "%d %B %Y")}
     %h4 Posted by
     = @offer.created_by 
 
